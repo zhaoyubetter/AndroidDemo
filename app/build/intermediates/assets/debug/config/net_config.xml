@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<net>
-<!--     <item
-        action="third_bing"
-        method="get"
-        params="uid&type&&openid&oauth_token&nickname&oauth_token_secret"
-        url="http://wx.douni.com/v1/user/binding/put.json?"/> -->
-</net>
