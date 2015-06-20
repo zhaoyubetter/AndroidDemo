@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.ldfs.demo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true" >
+
+    <TextView
+        android:id="@+id/tv_my_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/my_new_item"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <com.ldfs.demo.widget.DragGridLayout
+        android:id="@+id/dl_new_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_my_item"
+        app:fg_cellheight="30dp"
+        app:fg_cellwidth="50dp"
+        android:background="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_add_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dl_new_item"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/add_item"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <com.ldfs.demo.widget.DragGridLayout
+        android:id="@+id/dl_add_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_add_item"
+        app:fg_cellheight="30dp"
+        app:fg_cellwidth="50dp"
+        android:background="@color/blue" />
+
+    <TextView
+        android:id="@+id/tv_move_view"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@id/dl_new_item"
+        android:background="@color/red" />
+
+</RelativeLayout><!-- From: file:/Users/cz/Git/demo/app/src/main/res/layout/fragment_dragsort.xml -->

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">测试集</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_share">分享</string>
+    <string name="action_settings">设置</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="pager_indicator_title">ViewPager指示器</string>
+
+    <!-- 测试提示 -->
+    <string name="open_option_fail">打开功能失败~</string>
+
+    <!-- 属性动画 -->
+    <string name="shake_textview">TextView抖动:</string>
+    <string name="shake_imageview">ImageView抖动:</string>
+    <string name="shake_view">View抖动:</string>
+    <string name="shake_viewgrounp">ViewGrounp抖动:</string>
+    <string name="shake_textview_info">我是一个TextView</string>
+    <string name="add_value">递增</string>
+    <string name="add_value_rvs">递增完返回</string>
+    <string name="add_value_tovalue">从指定值递增</string>
+    <string name="zero">0</string>
+    <string name="one_hundred">100</string>
+    <string name="bg_color_change">背景颜色变幻:</string>
+    <string name="click_me">点击一下看看:</string>
+    <string name="seek_change_value">拖动改变drawable颜色</string>
+    <string name="preference_type">参数配置类型:</string>
+    <string name="preference_info">关于SharedPreference使用问题,一直在思考改良为一种比较简单的方式.并且减少硬编码出错机率.无意间看过一款游戏设计角度存储的配置项做法.由此改良为这个工具.</string>
+    <string name="file_value">文件值:%s</string>
+    <string name="cache_value">缓存值:%s</string>
+    <string name="from">来源:</string>
+    <string name="save">保存</string>
+
+    <!-- 视图动画 -->
+    <string name="guide_title_info">点击展开功能列表视图~</string>
+    <string name="guide_collect_info">点此收藏该内容~</string>
+
+    <!-- 自定义控件 -->
+    <string name="radio_group_info">RadioGrounp控件组:</string>
+    <string name="color">颜色</string>
+    <string name="radio">度数</string>
+    <string name="display_home">显示返回箭头</string>
+    <string name="title">标题</string>
+    <string name="center_title">中间标题</string>
+    <string name="show_title">显示标题</string>
+    <string name="show_center_title">显示中间标题</string>
+    <string name="show_loading">显示加载信息</string>
+    <string name="add_menu">文字菜单</string>
+    <string name="add_image_menu">图片菜单</string>
+    <string name="remove_menu">删除菜单</string>
+    <string name="clear_menu">清空菜单</string>
+    <string name="show_menu_divier">显示菜单分隔线</string>
+    <string name="test">测试</string>
+    <string name="empty"></string>
+    <string name="loading">努力加载中…</string>
+    <string name="load_end">加载完毕</string>
+    <string name="no_item">空空如此,稍后再来~</string>
+    <string name="network_load_error">网络不给力哦</string>
+    <string name="load_fail">加载失败!</string>
+    <string name="repeat_load">重新加载</string>
+    <string name="no_network">当前没有网络</string>
+    <string name="sorry_no_data">无法获取数据</string>
+    <string name="pull_to_refresh_try">重试</string>
+    <string name="setting">设置</string>
+    <string name="progress_content_container">progress展示内容</string>
+    <string name="progress_fragment_title">内容片</string>
+    <string name="share_title">内容分享到</string>
+    <string name="share_more">更多分享</string>
+    <string name="more">更多</string>
+    <string name="share_menu">分享对话框</string>
+    <string name="open_share_dialog">点击打开分享对话框</string>
+
+    <!-- Indicator -->
+    <string name="radius_size">半径大小:</string>
+    <string name="radius_padding">边距大小:</string>
+    <string name="radius_scale">缩放大小:</string>
+    <string name="circle_anim_type">动画类型:</string>
+    <string name="gravity">方向</string>
+    <string name="left">左</string>
+    <string name="center">中</string>
+    <string name="right">右</string>
+    <string name="anim_move">移动变化</string>
+    <string name="anim_rate">进度变化</string>
+    <string name="anim_size">大小变化</string>
+    <string name="drag_explanation">拖动</string>
+    <string name="remove">删除</string>
+    <string name="add">添加</string>
+    <string name="random_add">随机添加</string>
+    <string name="my_new_item">我的频道</string>
+    <string name="add_item">点击添加频道</string>
+    <string name="auto_resize">自适应</string>
+    <string name="set_padding">设置间隔:</string>
+    <string name="padding_value">间隔:%s</string>
+    <string name="click_mode">点击模式:</string>
+    <string name="click">点击</string>
+    <string name="single_click">单选</string>
+    <string name="select_click">多选</string>
+    <string name="change_select_res">切换选择标记</string>
+    <string name="select_position">选中:%s</string>
+    <string name="un_select">未选中</string>
+    <string name="left_padding">左边距</string>
+    <string name="right_padding">右边距</string>
+    <string name="mask_mode">遮罩类型</string>
+    <string name="padding">边距</string>
+    <string name="circle">圆</string>
+    <string name="rect">方形</string>
+    <string name="click_item">点击:%s</string>
+
+
+    <string name="left_expand">向左展开</string>
+    <string name="top_expand">向上展开</string>
+    <string name="right_expand">向右展开</string>
+    <string name="bottom_expand">向下展开</string>
+
+    <string name="wave_count">波纹个数:</string>
+    <string name="wave_speend">波纹速度:</string>
+    <string name="wave_height">波纹高度:</string>
+    <string name="wave_type">波纹类型:</string>
+    <string name="wave_retangle">波纹底部方形</string>
+    <string name="wave_circle">纹纹底部圆:</string>
+
+    <string name="set_radius">设置半径:</string>
+    <string name="choose_xfermode:">选择Xfermode:</string>
+
+    <string name="set_degress">设置角度:</string>
+    <string name="degress_value">当前角度:%s</string>
+    <string name="choose_mode">选择模式:</string>
+
+    <string name="count">个数:</string>
+    <string name="count_value">个数:%s</string>
+
+    <string name="choose_wheel">选择Wheel类型:</string>
+    <string name="out_contour">外圆长:</string>
+    <string name="out_contour_value">外圆长:%s</string>
+    <string name="inner_contour">内圆长:</string>
+    <string name="inner_contour_value">内圆长:%s</string>
+
+    <string name="contour_mode">绘制模式:</string>
+    <string name="contour_width_mode">内环绘制模式:</string>
+    <string name="text_mode">文字模式:</string>
+    <string name="start">开始</string>
+    <string name="frame_show">FrameView显示内容</string>
+    <string name="palette_image">提取图像:</string>
+    <string name="horizontal">横向</string>
+    <string name="vertical">纵向</string>
+    <string name="set_gravity">设置方向:</string>
+
+    <!-- 自定义drawable -->
+    <string name="music_drawable">音乐播放标记:</string>
+    <string name="path_effects">路径绘制:</string>
+    <string name="point_type">选择绘制模式:</string>
+    <string name="statistics">统计图标</string>
+    <string name="music_play">音乐播放标记</string>
+    <string name="magnifier">放大镜</string>
+    <string name="set_width">设置宽度</string>
+    <string name="set_height">设置高度</string>
+    <string name="set_size">设置尺寸</string>
+    <string name="size_value">当前大小:%s</string>
+    <string name="user">用户</string>
+    <string name="love">心形</string>
+    <string name="no_content">暂无内容</string>
+    <string name="rate_value">当前进度:%s</string>
+    <string name="wrap">切换</string>
+    <string name="select_value">起:%1$s 始:%2$s 值:%3$s</string>
+    <string name="restory">恢复</string>
+
+
+
+    <string name="article">
+              语言很神奇，时而空泛得让人不屑一顾，时而动人得让人热泪盈眶，时而锋利得让人痛苦不堪。那些说得动听却无力的承诺，那些说得冷淡却锋利的伤害话语，都是语言这东西的神奇之处。
+      在生活中，似乎有这样一条规律：如果在一句简单的话中，加入的修饰词语越多，使用的语气越夸张，这句话的可信度就越低。然而还是会有人相信这样的话，就因为听起来很真实，而且说的人看起来也很真诚。当他们知道这一切都是欺骗的时候，就会领悟到这条规律是有一定的道理的，虽然不是完全正确，但至少能让我们保持警惕，不要轻易相信那些说得天花乱坠的话。
+      承诺也是如此，有的承诺简单有力，有的承诺冗长浮夸。值得思考的是，人们往往更愿意相信后者，也许只有听信过虚假承诺的人才能吸取教训，或者比较理智的人才会相信前者。尤其是在爱情里，承诺说得少的会被认为不重视对方，说得多说得动听的才算是认真对待感情。
+      伤害却正好相反，越伤人的话其实越简单，寥寥数字就能把人伤得痛不欲生。那些又长又婉转的话，即使会伤人，杀伤力也有限。奇怪的是，有的人在表达情感的时候不善言辞，在伤害别人的时候反而咄咄逼人，似乎比起关心别人，伤害别人会更加容易一些，也更加肆无忌惮。
+      有时候，说出来的话并不能完全代表内心的想法，就像那些无力的承诺，锋利的伤害一样，我们会被这些话误导，领悟不到话语中的真意，才会被欺骗，被刺伤。我们要听的不是别人说的话，而是别人的心。
+    </string>
+    <string name="set_font">设置字体大小:</string>
+    <string name="font_value">字体大小:%s</string>
+    <string name="set_left_padding">设置左边距:</string>
+    <string name="left_padding_value">左右边距:%s</string>
+    <string name="set_top_padding">设置上下边距:</string>
+    <string name="top_padding_value">上下边距:%s</string>
+    <string name="set_fraction">设置进度:</string>
+    <string name="fraction_value">进度:%s</string>
+    <string name="text_gravity">文字方向</string>
+    <string name="alpha">透明度</string>
+    <string name="scale">缩放</string>
+    <string name="translation">位移</string>
+    <string name="rotate">旋转</string>
+</resources>

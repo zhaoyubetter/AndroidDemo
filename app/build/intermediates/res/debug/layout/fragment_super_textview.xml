@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true">
+
+    <com.ldfs.demo.widget.SuperTextView
+        android:id="@+id/sv_view"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        auto:tv_text="@string/test"
+        auto:tv_gravity="left"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/red"
+        auto:tv_left_drawable="@drawable/ic_launcher"
+        auto:tv_top_drawable="@drawable/ic_launcher"
+        auto:tv_right_drawable="@drawable/ic_launcher"
+        auto:tv_bottom_drawable="@drawable/ic_launcher"
+        auto:tv_drawable_width="20dp"
+        auto:tv_drawable_height="20dp"
+        auto:tv_padding="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/text_gravity"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <com.ldfs.demo.widget.RadioGridLayout
+        android:id="@+id/rl_gravity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        auto:fg_cellwidth="60dp"
+        auto:fg_padding="10dp"
+        auto:rl_check_res="@drawable/checked2"
+        auto:rl_default_res="@drawable/radio_none"
+        auto:rl_mode="single_choose" />
+
+</LinearLayout><!-- From: file:/Users/cz/Git/demo/app/src/main/res/layout/fragment_super_textview.xml -->

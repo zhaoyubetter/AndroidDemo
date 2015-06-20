@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true">
+
+    <ListView
+        android:id="@+id/lv_listview"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+
+    <com.ldfs.demo.widget.ListIndicator
+        android:id="@+id/li_indicator"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:background="@color/dark_white"
+        auto:li_text_size="35dp"/>
+
+</LinearLayout>

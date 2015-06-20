@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_bg">#FF2B2B2B</color>
+    <color name="menu_bg">#FF2B2B2B</color>
+    <color name="light_gray">#C2C7CC</color>
+    <color name="blue">#FF12A75C</color>
+    <color name="dark_gray">#3D454C</color>
+    <color name="gray_press">#99AAAAAA</color>
+    <color name="green">#FF45C018</color>
+    <color name="dark_green">#FFA3DDA2</color>
+    <color name="dark_gray_pressed">#373e44</color>
+    <color name="line">#FFBBBBBB</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_white">#FFBBBBFF</color>
+    <color name="black">#FF000000</color>
+    <color name="gray">#aaa</color>
+    <color name="red">#FFE63B53</color>
+    <color name="yellow">#FFFED930</color>
+    <color name="menu_line">#3F454C</color>
+    <color name="transparent">#00000000</color>
+    <color name="title_color">#3D454C</color>
+    <color name="text_color">#FF666666</color>
+    
+    <color name="turntable_bg">#44000000</color>
+    <color name="turntable_line">#FFDC8A16</color>
+</resources>

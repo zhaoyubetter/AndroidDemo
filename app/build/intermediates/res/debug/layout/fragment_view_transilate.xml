@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/al_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true">
+
+    <LinearLayout
+        android:id="@+id/al_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v7.widget.GridLayout
+            android:id="@+id/gl_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            auto:columnCount="4"
+            android:background="@color/gray"
+            auto:anim_mode="increase"
+            auto:anim_gravity="bottom"
+            auto:anim_weight="2"
+            auto:anim="alpha|rotation_y|translation_y|scale_x|scale_y"
+            auto:rowCount="5">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+
+        </android.support.v7.widget.GridLayout>
+
+        <android.support.v7.widget.GridLayout
+            android:id="@+id/gl_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            auto:columnCount="4"
+            android:background="@color/gray"
+            auto:anim_mode="increase"
+            auto:anim_weight="10"
+            auto:anim_gravity="near"
+            auto:anim="scale_x|scale_y|alpha"
+            auto:scalex_value="0.5"
+            auto:scaley_value="0.5"
+            auto:alpha_value="0.5"
+            auto:rowCount="5">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/test" />
+
+
+        </android.support.v7.widget.GridLayout>
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/start" />
+
+        <com.ldfs.demo.widget.RadioGridLayout
+            android:id="@+id/rl_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            auto:fg_cellwidth="60dp"
+            auto:fg_padding="10dp"
+            auto:rl_check_res="@drawable/checked2"
+            auto:rl_default_res="@drawable/radio_none"
+            auto:rl_mode="single_choose"
+            auto:anim_mode="increase"
+            auto:anim_gravity="right"
+            auto:anim_weight="3"
+            auto:anim="translation_x|translation_y" />
+
+        <com.ldfs.demo.widget.RadioGridLayout
+            android:id="@+id/rl_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            auto:fg_cellwidth="60dp"
+            auto:fg_padding="10dp"
+            auto:rl_check_res="@drawable/checked2"
+            auto:rl_default_res="@drawable/radio_none"
+            auto:rl_mode="single_choose"
+            auto:anim_mode="increase"
+            auto:anim_gravity="right"
+            auto:anim_weight="3"
+            auto:anim="translation_x|translation_y" />
+
+        <com.ldfs.demo.widget.RadioGridLayout
+            android:id="@+id/rl_anims"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            auto:fg_cellwidth="90dp"
+            auto:fg_padding="10dp"
+            auto:rl_check_res="@drawable/checked2"
+            auto:rl_default_res="@drawable/radio_none"
+            auto:rl_mode="more_choose"
+            auto:anim_mode="increase"
+            auto:anim_gravity="right"
+            auto:anim_weight="4"
+            auto:anim="translation_x|translation_y" />
+    </LinearLayout>
+</ScrollView><!-- From: file:/Users/cz/Git/demo/app/src/main/res/layout/fragment_view_transilate.xml -->

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <com.ldfs.demo.widget.MusicImageView
+        android:id="@+id/if_play_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:scaleType="fitCenter"
+        auto:flat_color="@color/blue"
+        auto:flat_type="circle" />
+
+    <TextView
+        android:id="@+id/tv_degress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/set_degress"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <SeekBar
+        android:id="@+id/sb_radius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="90" />
+
+    <TextView
+        android:id="@+id/tv_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/set_padding"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <SeekBar
+        android:id="@+id/sb_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="50" />
+
+</LinearLayout><!-- From: file:/Users/cz/Git/demo/app/src/main/res/layout/fragment_play_status.xml -->

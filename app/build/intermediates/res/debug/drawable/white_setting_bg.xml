@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners android:radius="5dip" />
+
+    <stroke
+        android:width="0.8dip"
+        android:color="@color/line" />
+    
+    <solid android:color="@color/white"/>
+
+</shape><!-- From: file:/Users/cz/Git/demo/app/src/main/res/drawable/white_setting_bg.xml -->

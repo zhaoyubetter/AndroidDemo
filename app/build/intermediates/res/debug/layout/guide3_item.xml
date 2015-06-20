@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/guide3_image1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dip"
+        android:scaleType="fitCenter"
+        android:src="@drawable/three02" />
+
+    <ImageView
+        android:id="@+id/guide3_image2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dip"
+        android:layout_marginTop="70dip"
+        android:scaleType="fitCenter"
+        android:src="@drawable/three01" />
+
+    <ImageView
+        android:id="@+id/guide3_image3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dip"
+        android:layout_marginTop="10dip"
+        android:scaleType="fitCenter"
+        android:src="@drawable/three03" />
+
+    <ImageView
+        android:id="@+id/guide3_image4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="60dip"
+        android:layout_marginTop="50dip"
+        android:scaleType="fitCenter"
+        android:src="@drawable/three05" />
+
+    <ImageView
+        android:id="@+id/guide3_image5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dip"
+        android:layout_marginTop="20dip"
+        android:scaleType="fitCenter"
+        android:src="@drawable/three04" />
+
+    <ImageView
+        android:id="@+id/guide3_image6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="60dip"
+        android:layout_marginTop="10dip"
+        android:scaleType="fitCenter"
+        android:src="@drawable/three06" />
+
+    <ImageView
+        android:id="@+id/guide3_image7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dip"
+        android:scaleType="fitCenter"
+        android:src="@drawable/three08" />
+
+    <ImageView
+        android:id="@+id/guide3_image8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/three07" />
+
+    <TextView
+        android:id="@+id/tv_surplus_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textSize="80sp" />
+
+</RelativeLayout><!-- From: file:/Users/cz/Git/demo/app/src/main/res/layout/guide3_item.xml -->

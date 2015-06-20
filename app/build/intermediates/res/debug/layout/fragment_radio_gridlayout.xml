@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <com.ldfs.demo.widget.RadioGridLayout
+        android:id="@+id/rl_grid_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:rl_check_res="@drawable/checked1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/left_padding"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <SeekBar
+        android:id="@+id/sb_right_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/right_padding"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <SeekBar
+        android:id="@+id/sb_bottom_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/click_mode"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <RadioGroup
+        android:id="@+id/rg_select_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/click" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/single_click" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/select_click" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_change_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/checked1"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/change_select_res"
+        android:textColor="@color/title_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_select_positions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/un_select"
+        android:textColor="@color/green"
+        android:textSize="15sp" />
+
+</LinearLayout><!-- From: file:/Users/cz/Git/demo/app/src/main/res/layout/fragment_radio_gridlayout.xml -->

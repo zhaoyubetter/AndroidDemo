@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true"
+    android:gravity="center"
+    android:text="@string/progress_content_container" />
+<!-- From: file:/Users/cz/Git/demo/app/src/main/res/layout/fragment_progress_container.xml -->

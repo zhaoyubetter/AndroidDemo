@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/music_bg"
+        android:src="@drawable/music_flag" />
+
+    <com.ldfs.demo.widget.DragMusicView
+        android:id="@+id/dv_drap_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+
+</RelativeLayout>

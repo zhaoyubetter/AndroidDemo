@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true">
+
+    <com.ldfs.demo.widget.DrawLineView
+        android:id="@+id/dv_draw"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/point_type"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <com.ldfs.demo.widget.RadioGridLayout
+        android:id="@+id/rl_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        auto:fg_cellwidth="60dp"
+        auto:fg_padding="10dp"
+        auto:rl_check_res="@drawable/checked2"
+        auto:rl_default_res="@drawable/radio_none"
+        auto:rl_mode="single_choose" />
+</LinearLayout>

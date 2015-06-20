@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="test_array">
+        <item>条目1</item>
+        <item>条目2</item>
+        <item>条目3</item>
+        <item>条目4</item>
+    </string-array>
+    <string-array name="progress_option">
+        <item>加载中</item>
+        <item>空布局</item>
+        <item>重试</item>
+        <item>无网络</item>
+        <item>布局体</item>
+    </string-array>
+    <string-array name="share_items">
+        <item>保存</item>
+        <item>复制</item>
+    </string-array>
+    <string-array name="xfermodes">
+        <item>Clear</item>
+        <item>Src</item>
+        <item>Dst</item>
+        <item>SrcOver</item>
+        <item>DstOver</item>
+        <item>SrcIn</item>
+        <item>DstIn</item>
+        <item>SrcOut</item>
+        <item>DstOut</item>
+        <item>SrcATop</item>
+        <item>DstATop</item>
+        <item>Xor</item>
+        <item>Darken</item>
+        <item>Lighten</item>
+        <item>Mulptiply</item>
+        <item>Screen</item>
+    </string-array>
+    <string-array name="play_status">
+        <item>暂停</item>
+        <item>播放</item>
+    </string-array>
+    <string-array name="wheel_mode">
+        <item>设置进度旋转</item>
+        <item>L进度加载圈</item>
+        <item>自动旋转模式</item>
+    </string-array>
+    <string-array name="contour_mode">
+        <item>外环</item>
+        <item>内环</item>
+        <item>内外联动</item>
+        <item>内外反向</item>
+    </string-array>
+    <string-array name="text_mode">
+        <item>进度信息</item>
+        <item>自定义</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="inner_contour_mode">
+        <item>内边距</item>
+        <item>线宽</item>
+    </string-array>
+
+    <string-array name="luck_res">
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+        <item>qq_item</item>
+    </string-array>
+
+    <string-array name="view_frames">
+        <item>内容体</item>
+        <item>加载中</item>
+        <item>空信息</item>
+        <item>异常</item>
+        <item>重试</item>
+    </string-array>
+
+    <string-array name="view_gravity">
+        <item>居中</item>
+        <item>左</item>
+    </string-array>
+
+    <string-array name="draw_point">
+        <item>圆</item>
+        <item>半径</item>
+        <item>点</item>
+    </string-array>
+
+    <string-array name="anim_duration">
+        <item>左</item>
+        <item>上</item>
+        <item>右</item>
+        <item>下</item>
+        <item>靠近</item>
+    </string-array>
+
+    <string-array name="anim_translation">
+        <item>整体</item>
+        <item>自身</item>
+        <item>整体递增</item>
+        <item>整体相反</item>
+    </string-array>
+
+    <string-array name="anim_arrays">
+        <item>alpha</item>
+        <item>translation_x</item>
+        <item>translation_y</item>
+        <item>scale_x</item>
+        <item>scale_y</item>
+        <item>rotation</item>
+        <item>rotation_x</item>
+        <item>rotation_y</item>
+    </string-array>
+
+    <string-array name="divide_layout_gravity">
+        <item>左</item>
+        <item>上</item>
+        <item>右</item>
+        <item>下</item>
+    </string-array>
+
+    <string-array name="text_gravity">
+        <item>居中</item>
+        <item>左</item>
+        <item>上</item>
+        <item>右</item>
+        <item>下</item>
+    </string-array>
+
+    <string-array name="center_text_gravity">
+        <item>无</item>
+        <item>左</item>
+        <item>上</item>
+        <item>右</item>
+        <item>下</item>
+    </string-array>
+</resources>

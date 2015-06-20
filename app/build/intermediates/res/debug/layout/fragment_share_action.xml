@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.ldfs.demo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <com.ldfs.demo.widget.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_size"
+        app:titlebar_title="@string/share_menu" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/open_share_dialog"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/text_title" />
+
+    <com.ldfs.demo.widget.ActivityChooserView
+        android:id="@+id/activity_chooserview"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
+
+</LinearLayout><!-- From: file:/Users/cz/Git/demo/app/src/main/res/layout/fragment_share_action.xml -->
