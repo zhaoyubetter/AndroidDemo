@@ -1,9 +1,9 @@
 # AndroidDemo
 简介
 ================
-这个项目是一个大的项目demo收录集.其实包括很多一些项目中的小的模板.例:
-1:自定义的轮播图展示点.
-2:自定义的音乐播放与暂停的无缝切换的展示效果
+这个项目是一个大的项目demo收录集.其实包括很多一些项目中的小的模板.例:<br>
+1:自定义的轮播图展示点.<br>
+2:自定义的音乐播放与暂停的无缝切换的展示效果<br>
 3:以及自定义的引导页.等等...<br>
 ![](https://github.com/momodae/AndroidDemo/blob/master/shutcat/pic1.png)&nbsp;
 ![](https://github.com/momodae/AndroidDemo/blob/master/shutcat/pic2.png)&nbsp;
