@@ -26,7 +26,7 @@ import static com.ldfs.demo.listener.OperatListener.INIT_DATA;
  * @Date 2015/2/11
  * 
  */
-@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.pager_edit_info)
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.delayload_bate_info)
 public class FragmentPagerEdit extends Fragment implements OnPageChangeListener {
 	@ID(id = R.id.vp_pager)
 	private ViewPager pager = null;

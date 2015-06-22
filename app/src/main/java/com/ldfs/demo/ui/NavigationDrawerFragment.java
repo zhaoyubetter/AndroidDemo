@@ -67,11 +67,11 @@ public class NavigationDrawerFragment extends Fragment {
 				}
 			});
 		}
-		mSwitchView.setChecked(!PrefernceUtils.getBoolean(ConfigName.BATE_INFO));
+		mSwitchView.setChecked(PrefernceUtils.getRvsBoolean(ConfigName.BATE_INFO));
 		mSwitchView.setOnCheckedChangeListener(new SwitchView.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(SwitchView switchView, boolean isChecked) {
-				PrefernceUtils.setBoolean(ConfigName.BATE_INFO,isChecked);
+				PrefernceUtils.setBoolean(ConfigName.BATE_INFO,!isChecked);
 			}
 		});
 

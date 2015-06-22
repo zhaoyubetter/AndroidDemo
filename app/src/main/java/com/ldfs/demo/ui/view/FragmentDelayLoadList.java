@@ -17,7 +17,7 @@ import com.ldfs.demo.listener.OperatListener;
  * @author momo
  * @Date 2015/2/11
  */
-@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.delayload_bate_info)
+
 public class FragmentDelayLoadList extends ProgressFragment implements OperatListener {
 	private static final String _PARAMS1 = "position";
 	@ID(id = R.id.list)

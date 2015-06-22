@@ -80,9 +80,9 @@ public class ViewInject {
     private static void initRate(Object object, View view) {
         //因主界面程序己固定,且布局等都己非常多了.所以默认并不改动每个布局去添加这个文件,
         // 而以动态生成布局方式添加.非RelativeLayout,则在外围添加一层RelativeLayout
-        boolean bateInfo = PrefernceUtils.getBoolean(ConfigName.BATE_INFO);
+        boolean bateInfo = PrefernceUtils.getRvsBoolean(ConfigName.BATE_INFO);
         RateInfo info = object.getClass().getAnnotation(RateInfo.class);
-        if (!bateInfo && null != info && null != view) {
+        if (bateInfo && null != info && null != view) {
             RelativeLayout rateContainer = null;
             Context context = view.getContext();
             View rateLayout = View.inflate(context, R.layout.rate_layout, null);
