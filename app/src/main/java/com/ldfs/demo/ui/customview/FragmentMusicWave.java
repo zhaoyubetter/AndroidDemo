@@ -12,6 +12,8 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.WaveView;
@@ -23,6 +25,7 @@ import com.ldfs.demo.widget.WaveView;
  * @Date 2015/3/1
  * 
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.wave_bete_info)
 public class FragmentMusicWave extends Fragment implements OnSeekBarChangeListener {
 	@ID(id = R.id.wave_view)
 	private WaveView mWaveView;

@@ -10,7 +10,8 @@ import android.view.ViewGroup;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
-import com.ldfs.demo.translation.TranslationHelper;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.translation.ViewTranslation;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.RadioGridLayout;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 /**
  * 控件组移动动画
  */
+@RateInfo(rate= Rate.CREATE,beteInfo = R.string.layout_translation_bete)
 public class FragmentViewTransilate extends Fragment {
     @ID(id = R.id.gl_layout1)
     private GridLayout mLayout;
@@ -32,6 +34,7 @@ public class FragmentViewTransilate extends Fragment {
     private int mMode;
     private int mAnim;
     private int mGravity;
+    private boolean isReverse;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -87,14 +90,14 @@ public class FragmentViewTransilate extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        TranslationHelper.startTranslation(this, R.layout.fragment_view_transilate);
+//        TranslationHelper.startTranslation(this, R.layout.fragment_view_transilate);
     }
 
     @MethodClick(ids = R.id.btn_start)
     public void startAnim(View v) {
 //        ViewTranslation.startTransilate(mLayout, mMode, mDuration, mDuraiton, isReverse);
-//        isReverse = !isReverse;
-//        ViewTranslation.startAnim(mLayout, mMode, mAnim, mGravity);
-        TranslationHelper.endTranslation(this, R.layout.fragment_view_transilate);
+        isReverse = !isReverse;
+        ViewTranslation.startAnim(mLayout, mMode, mAnim, mGravity,isReverse);
+//        TranslationHelper.endTranslation(this, R.layout.fragment_view_transilate);
     }
 }

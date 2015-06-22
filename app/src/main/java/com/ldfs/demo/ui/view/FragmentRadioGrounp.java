@@ -13,6 +13,8 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.anim.AnimationUtils;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.OptionGroup;
 import com.ldfs.demo.widget.OptionGroup.OnCheckListener;
@@ -24,6 +26,7 @@ import com.ldfs.demo.widget.OptionGroup.OnCheckListener;
  * @Date 2015/2/8
  * 
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.radio_group_bate_info)
 public class FragmentRadioGrounp extends Fragment implements OnSeekBarChangeListener {
 	@ID(id = R.id.og_grounp)
 	private OptionGroup mOptionGroup;

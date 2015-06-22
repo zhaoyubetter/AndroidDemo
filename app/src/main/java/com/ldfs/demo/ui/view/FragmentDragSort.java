@@ -13,11 +13,11 @@ import android.widget.TextView;
 
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.listener.SimpleAnimatorListener;
-import com.ldfs.demo.util.Loger;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.DragGridLayout;
-import com.ldfs.demo.widget.FixedGridLayout;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 
@@ -27,6 +27,7 @@ import com.nineoldandroids.view.ViewPropertyAnimator;
  * @author momo
  * @Date 2015/2/11
  */
+@RateInfo(rate= Rate.CODING,beteInfo = R.string.draw_bete_info)
 public class FragmentDragSort extends Fragment {
 	@ID(id = R.id.dl_new_item)
 	private DragGridLayout mNewLayout;

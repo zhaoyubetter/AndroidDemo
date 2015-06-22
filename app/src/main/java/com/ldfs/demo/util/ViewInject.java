@@ -1,11 +1,8 @@
 package com.ldfs.demo.util;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -15,6 +12,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
@@ -22,7 +22,15 @@ import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
 import com.ldfs.demo.annotation.Navigation;
 import com.ldfs.demo.annotation.ViewClick;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.listener.ViewImageClickListener;
+import com.ldfs.demo.preference.ConfigName;
+import com.ldfs.demo.preference.PrefernceUtils;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.LinkedList;
 
 
 /**
@@ -60,6 +68,55 @@ public class ViewInject {
         initView(object, view, initParent);
         initClick(object, view);
         initMethodClick(object, view);
+        initRate(object, view);
+    }
+
+    /**
+     * 初始化进度信息
+     *
+     * @param object
+     * @param view
+     */
+    private static void initRate(Object object, View view) {
+        //因主界面程序己固定,且布局等都己非常多了.所以默认并不改动每个布局去添加这个文件,
+        // 而以动态生成布局方式添加.非RelativeLayout,则在外围添加一层RelativeLayout
+        boolean bateInfo = PrefernceUtils.getBoolean(ConfigName.BATE_INFO);
+        RateInfo info = object.getClass().getAnnotation(RateInfo.class);
+        if (!bateInfo && null != info && null != view) {
+            RelativeLayout rateContainer = null;
+            Context context = view.getContext();
+            View rateLayout = View.inflate(context, R.layout.rate_layout, null);
+            TextView rateStatus = (TextView) rateLayout.findViewById(R.id.tv_rate_state);
+            TextView rateInfo = (TextView) rateLayout.findViewById(R.id.tv_rate_info);
+            rateStatus.setText(info.rate().toString());//设置demo完成进度状态
+            rateInfo.setText(info.beteInfo());//设置demo进度备注信息
+            if (view instanceof RelativeLayout) {
+                //直接添加
+                rateContainer = (RelativeLayout) view;
+            } else if (view instanceof ViewGroup) {
+                ViewGroup viewGroup = (ViewGroup) view;
+                LinkedList<View> childViews = new LinkedList<>();
+                for (int i = 0; i < viewGroup.getChildCount(); ) {
+                    View childView = viewGroup.getChildAt(i);
+                    childViews.add(childView);
+                    viewGroup.removeView(childView);
+                }
+                rateContainer = new RelativeLayout(context);
+                viewGroup.addView(rateContainer, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                LinearLayout container = new LinearLayout(context);
+                container.setOrientation(LinearLayout.VERTICAL);
+                int size = childViews.size();
+                for (int i = 0; i < size; i++) {
+                    container.addView(childViews.removeFirst());
+                }
+                rateContainer.addView(container, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            }
+            if (null != rateContainer) {
+                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                rateContainer.addView(rateLayout, layoutParams);
+            }
+        }
     }
 
     /**
@@ -178,7 +235,7 @@ public class ViewInject {
                     }
                 }
                 //子控件点击
-                if (null != viewClick.childClick() && 0 < viewClick.childClick().length&& -1 != viewClick.childClick()[0]) {
+                if (null != viewClick.childClick() && 0 < viewClick.childClick().length && -1 != viewClick.childClick()[0]) {
                     int[] ids = viewClick.childClick();
                     for (int i = 0; i < ids.length; i++) {
                         View findView = getFindView(object, view, ids[i]);

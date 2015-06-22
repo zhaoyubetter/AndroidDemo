@@ -1,7 +1,5 @@
 package com.ldfs.demo.ui.view;
 
-import java.util.ArrayList;
-
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -22,11 +20,15 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.RadioGridLayout;
 import com.ldfs.demo.widget.RadioGridLayout.OnCheckListener;
+
+import java.util.ArrayList;
 
 /**
  * GridLayout的选择状态组
@@ -34,6 +36,7 @@ import com.ldfs.demo.widget.RadioGridLayout.OnCheckListener;
  * @author Administrator
  * @Date 2015/2/12
  */
+@RateInfo(rate= Rate.COMPLETE)
 public class FragmentRadioGridLayout extends Fragment implements OnSeekBarChangeListener {
 	@ID(id = R.id.rl_grid_layout)
 	private RadioGridLayout mRadioLayout;

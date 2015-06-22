@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.CarView;
@@ -26,6 +28,7 @@ import com.ldfs.demo.widget.CarView;
  * @Date 2015/3/3
  * 
  */
+@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.default_bete_info)
 public class FragmentMatrixImage extends Fragment {
 	@ID(id = R.id.sb_radius)
 	private SeekBar mSeekBar;

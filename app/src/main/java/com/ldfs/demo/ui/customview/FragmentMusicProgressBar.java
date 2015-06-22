@@ -13,6 +13,8 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.MusicProgressBar;
@@ -20,6 +22,7 @@ import com.ldfs.demo.widget.MusicProgressBar;
 /**
  * 进度条,以及进度截取
  */
+@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.musicprogressbar_bete_info)
 public class FragmentMusicProgressBar extends Fragment {
     @ID(id = R.id.tv_rate)
     private TextView mRateInfo;

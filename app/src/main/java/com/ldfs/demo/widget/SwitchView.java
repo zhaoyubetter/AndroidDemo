@@ -19,6 +19,7 @@ import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.ValueAnimator;
 
+
 /**
  * Created by momo on 2015/3/16.
  * 安卓自定义切换状态按钮
@@ -98,12 +99,8 @@ public class SwitchView extends View implements View.OnClickListener {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        float x = event.getX();
-        float y = event.getY();
         int width = getWidth();
         int height = getHeight();
-        RectF leftRect = new RectF(0, 0, width / 2, height);
-        RectF rightRect = new RectF(width / 2, 0, width, height);
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
@@ -134,18 +131,24 @@ public class SwitchView extends View implements View.OnClickListener {
         int width = getWidth();
         int height = getHeight();
         int radius = Math.min(width, height) / 2;
+
         //绘外圆
         mPaint.setColor(evaluate(mStrokeColor, mCheckedColor));
         mPaint.setStrokeWidth(mStrokeWidth);
         mPaint.setStyle(Paint.Style.STROKE);
 
         //外层圆角矩阵
-        canvas.drawRoundRect(new RectF(mStrokeWidth, mStrokeWidth, width - mStrokeWidth, height - mStrokeWidth), radius, radius, mPaint);
+        canvas.drawRoundRect(new RectF(mStrokeWidth, mStrokeWidth, width - mStrokeWidth, height - mStrokeWidth), radius - mStrokeWidth, radius - mStrokeWidth, mPaint);
 
         //内层圆角矩阵
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(evaluate(mFillColor, mCheckedColor));
-        canvas.drawRoundRect(new RectF(mStrokeWidth + mStrokeWidth / 2, mStrokeWidth + mStrokeWidth / 2, width - mStrokeWidth - mStrokeWidth / 2, height - mStrokeWidth - mStrokeWidth / 2), radius - mStrokeWidth, radius - mStrokeWidth, mPaint);
+        float fractionWidth = ((width - mStrokeWidth * 2) / 2) * mFraction;
+        float fractionHeight = ((height - mStrokeWidth * 2) / 2) * mFraction;
+        canvas.drawRoundRect(new RectF(mStrokeWidth, mStrokeWidth, width - mStrokeWidth, height - mStrokeWidth), radius, radius, mPaint);
+
+        mPaint.setColor(Color.WHITE);
+        canvas.drawRoundRect(new RectF(mStrokeWidth + fractionWidth, mStrokeWidth + fractionHeight, width - mStrokeWidth - fractionWidth, height - mStrokeWidth - fractionHeight), radius, radius, mPaint);
 
         mPaint.setColor(evaluate(mUncheckedColor, Color.WHITE));
         mPaint.setStrokeWidth(mUncheckedWidth);
@@ -208,15 +211,23 @@ public class SwitchView extends View implements View.OnClickListener {
      * @param isChecked
      */
     public void setChecked(final boolean isChecked) {
-        ValueAnimator pressAnim = getPressAnim(true);
-        ValueAnimator checkedAnim = getCheckedAnim(isChecked);
-        ValueAnimator pressAnim1 = getPressAnim(false);
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.play(pressAnim).before(checkedAnim).before(pressAnim1);
-        animatorSet.start();
+        setChecked(isChecked, true);
     }
 
-    private ValueAnimator getCheckedAnim(final boolean isChecked) {
+    public void setChecked(final boolean isChecked, boolean anim) {
+        if (anim) {
+            ValueAnimator pressAnim = getPressAnim(true);
+            ValueAnimator checkedAnim = getCheckedAnim(isChecked, 200);
+            ValueAnimator pressAnim1 = getPressAnim(false);
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.play(pressAnim).before(checkedAnim).before(pressAnim1);
+            animatorSet.start();
+        } else {
+            getCheckedAnim(isChecked, 0).start();
+        }
+    }
+
+    private ValueAnimator getCheckedAnim(final boolean isChecked, long duration) {
         this.isChecked = isChecked;
         ValueAnimator valueAnimator = ObjectAnimator.ofFloat(1f);
         valueAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -228,7 +239,7 @@ public class SwitchView extends View implements View.OnClickListener {
                 invalidate();
             }
         });
-        valueAnimator.setDuration(200);
+        valueAnimator.setDuration(duration);
         if (null != mListener) {
             mListener.onCheckedChanged(this, isChecked);
         }
@@ -259,6 +270,10 @@ public class SwitchView extends View implements View.OnClickListener {
     public void setFillColor(int mFillColor) {
         this.mFillColor = mFillColor;
         invalidate();
+    }
+
+    public void toggle() {
+        setChecked(!isChecked);
     }
 
     public interface OnCheckedChangeListener {

@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.ActivityChooserView;
@@ -23,6 +25,7 @@ import com.ldfs.demo.widget.TitleBar;
  * @Date 2015/2/9
  * 
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.share_bete_info)
 public class FragmentShareAction extends Fragment {
 	@ID(id = R.id.titlebar_container)
 	private TitleBar mTitleBar;

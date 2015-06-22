@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.DrawLineView;
 import com.ldfs.demo.widget.RadioGridLayout;
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 /**
  * 控件绘制点
  */
+@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.drawline_bate_info)
 public class FragmentDrawToPoint extends Fragment {
     @ID(id = R.id.dv_draw)
     private DrawLineView mDrawLine;

@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.PopupMenu;
 import com.ldfs.demo.widget.PopupMenu.Gravity;
@@ -22,6 +24,7 @@ import com.ldfs.demo.widget.PopupMenu.Gravity;
  * @author momo
  * @Date 2015/2/28
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.popup_bete_info)
 public class FragmentPopupMenu extends Fragment implements OnClickListener {
 	@ID(id = R.id.tv_left_view, click = true)
 	private TextView mLeftView;

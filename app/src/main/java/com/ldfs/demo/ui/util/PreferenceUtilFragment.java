@@ -17,6 +17,8 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.ViewClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.preference.ConfigName;
 import com.ldfs.demo.preference.PrefernceUtils;
 import com.ldfs.demo.util.TextFontUtils;
@@ -29,6 +31,7 @@ import com.ldfs.demo.util.ViewInject;
  * @Date 2014/11/28
  */
 @ViewClick(ids = R.id.btn_save)
+@RateInfo(rate = Rate.COMPLETE_BATE,beteInfo = R.string.preference_bate_info)
 public class PreferenceUtilFragment extends Fragment implements OnClickListener {
 	@ID(id = R.id.rg_params_type)
 	private RadioGroup radioGroup;

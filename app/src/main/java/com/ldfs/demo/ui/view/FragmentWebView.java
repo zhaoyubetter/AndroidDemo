@@ -16,6 +16,8 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.FileUtils;
 import com.ldfs.demo.util.HandleTask;
 import com.ldfs.demo.util.Loger;
@@ -25,6 +27,7 @@ import com.ldfs.demo.widget.MyScrollView;
 /**
  * 自定义ScrollView 解决WebView 与其他控件并存.WebView Event事件丢失
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.webview_bate_info)
 public class FragmentWebView extends Fragment {
     @ID(id=R.id.scroll_view)
     private MyScrollView mScrollView;

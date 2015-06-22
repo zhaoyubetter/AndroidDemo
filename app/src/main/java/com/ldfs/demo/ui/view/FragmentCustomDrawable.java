@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
@@ -30,6 +32,7 @@ import com.nineoldandroids.animation.ValueAnimator;
 /**
  * 自定义Drawable演示
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.drawable_bate_info)
 public class FragmentCustomDrawable extends Fragment implements SeekBar.OnSeekBarChangeListener {
     @ID(id = R.id.iv_music)
     private ImageView music;

@@ -23,7 +23,6 @@ import com.nineoldandroids.animation.ValueAnimator;
  * @author momo
  * @Date 2015/3/3
  * <p/>
- * //记:在绘图内的单位,应尽量都以float来计,使用int,会出现偏差
  */
 public class MusicImageView extends ImageViewFlat {
     private Paint mPaint;

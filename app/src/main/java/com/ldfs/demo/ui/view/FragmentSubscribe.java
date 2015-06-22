@@ -14,6 +14,8 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.SubscribeView;
@@ -21,6 +23,7 @@ import com.ldfs.demo.widget.SubscribeView;
 /**
  * 微看点订阅展示功能
  */
+@RateInfo(rate = Rate.COMPLETE_BATE,beteInfo = R.string.subscribe_bate_info)
 public class FragmentSubscribe extends Fragment {
     @ID(id = R.id.sv_subscribe)
     private SubscribeView mSubscribeView;

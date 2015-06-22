@@ -15,6 +15,8 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.AddMusicView;
@@ -24,6 +26,7 @@ import com.nineoldandroids.view.ViewPropertyAnimator;
 /**
  * 添加音乐效果
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.add_music_bete_info)
 public class FragmentAddMusic extends Fragment {
     @ID(id = R.id.av_add_music)
     private AddMusicView mAddMusicView;

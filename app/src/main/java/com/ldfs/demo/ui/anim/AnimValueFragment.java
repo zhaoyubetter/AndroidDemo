@@ -14,6 +14,8 @@ import com.ldfs.demo.R;
 import com.ldfs.demo.anim.AnimValue;
 import com.ldfs.demo.anim.AnimationUtils;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.Loger;
 import com.ldfs.demo.util.ViewInject;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -27,6 +29,7 @@ import com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener;
  * @Date 2015/2/8
  * 
  */
+@RateInfo(rate= Rate.COMPLETE)
 public class AnimValueFragment extends Fragment {
 	private static final int MAX_VALUE = 1000;
 	private static final int ANIM_DURATION = 5 * 1000;

@@ -155,6 +155,7 @@ public class ClockWheelView extends View {
         canvas.translate(centerX / 2, centerX / 2);
         canvas.drawLine(centerX / 2, centerY / 2, dx, dy, mPaint);
         canvas.restore();
+
     }
 
 }

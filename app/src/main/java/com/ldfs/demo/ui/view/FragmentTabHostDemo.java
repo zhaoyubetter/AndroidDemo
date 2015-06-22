@@ -12,6 +12,8 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.adapter.SimpleViewPagerAdapter;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.TabHost;
 
@@ -24,6 +26,7 @@ import java.util.List;
  * @author momo
  * @date 2015/3/8
  */
+@RateInfo(rate = Rate.CODING)
 public class FragmentTabHostDemo extends Fragment {
     @ID(id = R.id.vp_pager)
     private ViewPager mPager;

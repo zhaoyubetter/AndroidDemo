@@ -10,9 +10,12 @@ import android.widget.SeekBar;
 
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.LoveView;
 
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.default_bete_info)
 public class FragmentSuffceView extends Fragment implements SeekBar.OnSeekBarChangeListener {
     @ID(id = R.id.ll_container)
     private LinearLayout mContainer;

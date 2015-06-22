@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
@@ -21,6 +23,7 @@ import com.ldfs.demo.util.ViewInject;
 /**
  * 编辑文字演示控件
  */
+@RateInfo(rate= Rate.CODING,beteInfo = R.string.edit_text_bate_info)
 public class FragmentEditTextView extends Fragment implements SeekBar.OnSeekBarChangeListener {
     @ID(id = R.id.et_editor)
     private EditText mEditor;

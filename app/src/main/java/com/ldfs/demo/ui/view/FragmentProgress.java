@@ -9,6 +9,8 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 
 /**
  * 各种状态桢的加载页
@@ -17,6 +19,7 @@ import com.ldfs.demo.R;
  * @Date 2015/2/9
  * 
  */
+@RateInfo(rate= Rate.COMPLETE)
 public class FragmentProgress extends ProgressFragment {
 	@Override
 	public int getLayout() {

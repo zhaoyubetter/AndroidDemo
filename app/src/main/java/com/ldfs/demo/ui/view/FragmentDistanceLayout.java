@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.translation.ViewTranslation;
 import com.ldfs.demo.util.ViewInject;
-
+@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.default_bete_info)
 public class FragmentDistanceLayout extends Fragment implements View.OnClickListener {
     @ID(id = R.id.container, click = true)
     private ViewGroup mLayout;

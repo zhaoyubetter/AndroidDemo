@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.TurntableView;
@@ -26,6 +28,7 @@ import com.ldfs.demo.widget.TurntableView.PlayCallback;
  * @Date 2015/3/4
  * 
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.thrntable_bete_info)
 public class FragmentRectangleTurntable extends Fragment {
 	@ID(id = R.id.tw_rectangle_turntable)
 	private TurntableView mTurntable;

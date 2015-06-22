@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.FrameView;
 import com.ldfs.demo.widget.RadioGridLayout;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 /**
  * View 显示状态桢
  */
+@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.frame_bete_info)
 public class FragmentFrameView extends Fragment {
     @ID(id = R.id.rl_radio)
     private RadioGridLayout mRadio;

@@ -1,8 +1,5 @@
 package com.ldfs.demo.ui.anim;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -16,12 +13,17 @@ import android.widget.Toast;
 import com.ldfs.demo.R;
 import com.ldfs.demo.adapter.SimpleViewPagerAdapter;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.ui.anim.guide.Guide;
 import com.ldfs.demo.ui.anim.guide.GuideView1;
 import com.ldfs.demo.ui.anim.guide.GuideView2;
 import com.ldfs.demo.ui.anim.guide.GuideView3;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.CircleNavigationBar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 动画引导页
@@ -30,6 +32,7 @@ import com.ldfs.demo.widget.CircleNavigationBar;
  * @Date 2015/2/8
  * 
  */
+@RateInfo(rate= Rate.COMPLETE)
 public class AnimGuideFragment extends Fragment implements OnPageChangeListener{
 	@ID(id = R.id.vp_pager)
 	private ViewPager pager;

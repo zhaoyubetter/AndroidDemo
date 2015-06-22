@@ -8,10 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ldfs.demo.R;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 
 /**
  * A simple {@link Fragment} subclass.
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.share_bete_info)
 public class CustomShareFragment extends Fragment {
 
 

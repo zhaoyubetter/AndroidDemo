@@ -1,7 +1,5 @@
 package com.ldfs.demo.ui.view;
 
-import java.util.ArrayList;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -18,10 +16,15 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import com.ldfs.demo.R;
 import com.ldfs.demo.adapter.SimpleViewPagerAdapter;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.indicator.ViewPagerIndicator;
 
+import java.util.ArrayList;
+
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.pager_indicator_bete_info)
 public class FragmentIndicator extends Fragment implements OnSeekBarChangeListener, OnCheckedChangeListener {
 	@ID(id = R.id.vp_circle_pager)
 	private ViewPager mPager;

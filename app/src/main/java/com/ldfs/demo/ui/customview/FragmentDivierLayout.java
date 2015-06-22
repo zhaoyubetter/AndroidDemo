@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.Loger;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.DivideLinearLayout;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
  * @author momo
  * @Date 2015/3/14
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.divider_bete_info)
 public class FragmentDivierLayout extends Fragment {
     @ID(id = R.id.dl_divide_layout)
     private DivideLinearLayout mDivideLayout;

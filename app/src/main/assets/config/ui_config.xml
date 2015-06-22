@@ -28,7 +28,6 @@
         <item name="View拖动排序" info="View拖动排序,删除添加动画,基于ViewDragHelper" clazz="com.ldfs.demo.ui.view.FragmentDragSort" />
         <item name="GridLayout布局" info="GridLayout布局,参考apiDemo的简单的行列布局" clazz="com.ldfs.demo.ui.view.FragmentFixedGridLayout" />
         <item name="GridLayout多分组选择" info="GridLayout布局,多个分组的选项分配" clazz="com.ldfs.demo.ui.view.FragmentRadioGridLayout" />
-        <item name="GridLayout 自适应遮罩层分组选择" info="GridLayout布局,自适应遮罩多个分组的选项分配" clazz="com.ldfs.demo.ui.view.FragmentRadioMaskLayout" />
         <item name="RelateLayout计算子控件间距" info="在RelateLayout自动绘出所有子控件距离最近的中间,包括与其他相交控件距离" clazz="com.ldfs.demo.ui.view.FragmentDistanceLayout" />
         <item name="LinearLayout任一方向绘制线" info="LinearLayout内子控件,或者周边绘制分隔线的控件" clazz="com.ldfs.demo.ui.customview.FragmentDivierLayout" />
         <item name="PopupMenu菜单组" info="依附于任一view展开的控件组" clazz="com.ldfs.demo.ui.customview.FragmentPopupMenu" />

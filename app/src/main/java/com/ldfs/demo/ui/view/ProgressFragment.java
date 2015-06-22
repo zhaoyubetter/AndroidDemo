@@ -16,6 +16,8 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.ldfs.demo.R;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.listener.ViewImageClickListener;
 import com.ldfs.demo.util.PackageUtil;
 import com.ldfs.demo.util.ViewInject;
@@ -32,7 +34,9 @@ import com.nineoldandroids.view.ViewPropertyAnimator;
  * 
  * @author momo
  * @Date 2014/5/29
+ * @deprecated 推荐使用FrameView @link{com.ldfs.demo.widget.FrameView}
  */
+@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.progress_bete_info)
 public abstract class ProgressFragment extends Fragment {
 
 	private static final int DELAY_MILLIS = 500;

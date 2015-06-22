@@ -1,9 +1,5 @@
 package com.ldfs.demo.preference;
 
-import java.lang.ref.SoftReference;
-import java.lang.reflect.Field;
-import java.util.Arrays;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,16 +8,20 @@ import android.util.Log;
 
 import com.ldfs.demo.App;
 
+import java.lang.ref.SoftReference;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+
 /**
  * 配置项管理对象
- * 
+ *
  * @author momo
  * @Date 2014/11/28
  * @version 从prefernceName中取值,根据角标取值,并设置.
  */
 public class PrefernceUtils {
 	// 配置项名称
-	private static final String DEFAULT_PREFERENCE = "app_config";
+	private static final String DEFAULT_PREFERENCE = "jy_config";
 	private static final String DEFAULT_KEY = "config";
 	private static final String DEFAULT_VALUE = "-1";
 	private static SoftReference<String[]> values;
@@ -50,7 +50,7 @@ public class PrefernceUtils {
 					System.arraycopy(preferenceValue, 0, newValue, 0, preferenceValue.length);
 					// 为剩余取值赋默认值
 					for (int i = preferenceValue.length; i < fields.length; i++) {
-						newValue[i] = String.valueOf(0);
+						newValue[i] = String.valueOf(DEFAULT_VALUE);
 					}
 					values = new SoftReference<String[]>(newValue);
 					createValue(newValue);
@@ -80,7 +80,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 设置取值
-	 * 
+	 *
 	 * @param value
 	 */
 	@SuppressLint("InlinedApi")
@@ -122,7 +122,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 生成取值 默认值 -1;
-	 * 
+	 *
 	 * @param allValues
 	 */
 	private static void createValue(String[] allValues) {
@@ -139,7 +139,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 根据角标获取 默认值 -1;
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -162,7 +162,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 根据角标获取 默认值 -1;
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -172,7 +172,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 根据角标获取 默认值 -1;
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -195,7 +195,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 根据角标获取 默认值 -1;
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -205,7 +205,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 获得boolean值
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -215,7 +215,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 获得boolean值
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -225,21 +225,19 @@ public class PrefernceUtils {
 
 	/**
 	 * 取反boolean值
-	 * 
+	 *
 	 * @param index
-	 * @param defaultValue
 	 *            默认值
 	 * @return
 	 */
 	public static boolean getRvsBoolean(boolean isClear,int index) {
 		return 1 != getInt(isClear, index);
 	}
-	
+
 	/**
 	 * 取反boolean值
-	 * 
+	 *
 	 * @param index
-	 * @param defaultValue
 	 *            默认值
 	 * @return
 	 */
@@ -250,7 +248,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 根据角标获取 默认值 null;
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -269,7 +267,7 @@ public class PrefernceUtils {
 
 	/**
 	 * 根据角标获取 默认值 null;
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -304,4 +302,6 @@ public class PrefernceUtils {
 		allValues[index] = String.valueOf((value ? 1 : -1));
 		createValue(allValues);
 	}
+
+
 }

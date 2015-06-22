@@ -1,13 +1,15 @@
 package com.ldfs.demo.ui.view;
 
-import com.ldfs.demo.R;
-import com.ldfs.demo.util.ViewInject;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.ldfs.demo.R;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
+import com.ldfs.demo.util.ViewInject;
 
 /**
  * 视图遮罩效果
@@ -16,6 +18,7 @@ import android.view.ViewGroup;
  * @Date 2015/2/8
  * 
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.guide_bate_info)
 public class FragmentViewMask extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

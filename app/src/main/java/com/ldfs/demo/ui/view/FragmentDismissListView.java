@@ -1,8 +1,5 @@
 package com.ldfs.demo.ui.view;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,9 +10,14 @@ import android.widget.ListView;
 import com.ldfs.demo.R;
 import com.ldfs.demo.adapter.ArrayAdapter;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.DismissListView;
 import com.ldfs.demo.widget.DismissListView.OnDismissListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 点击条目消失的ListView
@@ -23,6 +25,7 @@ import com.ldfs.demo.widget.DismissListView.OnDismissListener;
  * @Date 2015/2/10
  *
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.dismisslist_bete_info)
 public class FragmentDismissListView extends Fragment {
 	@ID(id = R.id.list)
 	private ListView list;

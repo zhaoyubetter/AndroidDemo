@@ -14,6 +14,8 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.TitleBar;
 
@@ -24,6 +26,7 @@ import com.ldfs.demo.widget.TitleBar;
  * @Date 2015/2/9
  * 
  */
+@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.titlebar_bete_info)
 public class FragmentTitleBar extends Fragment implements OnCheckedChangeListener, OnClickListener {
 	@ID(id = R.id.titlebar_container)
 	private TitleBar mTitleBar;

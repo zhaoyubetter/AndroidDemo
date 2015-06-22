@@ -10,8 +10,11 @@ import android.widget.Button;
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 
+@RateInfo(rate = Rate.CODING)
 public class FragmentScrollView extends Fragment {
 	@ID(id=R.id.btn)
 	private Button btn;

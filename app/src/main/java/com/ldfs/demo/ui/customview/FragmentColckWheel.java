@@ -14,6 +14,8 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.ClockWheelView;
@@ -21,6 +23,7 @@ import com.ldfs.demo.widget.ClockWheelView;
 /**
  * 时钟进度控件
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.click_wheel_bete_info)
 public class FragmentColckWheel extends Fragment {
     @ID(id = R.id.cv_colck_view)
     private ClockWheelView mClockWheelView;

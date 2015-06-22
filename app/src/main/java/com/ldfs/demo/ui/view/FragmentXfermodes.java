@@ -1,27 +1,25 @@
 package com.ldfs.demo.ui.view;
 
-import java.util.ArrayList;
-
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
-import android.widget.TextView;
 
-import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.RadioGridLayout;
 import com.ldfs.demo.widget.RadioGridLayout.OnCheckListener;
 import com.ldfs.demo.widget.XfermodesSampleView;
+
+import java.util.ArrayList;
 
 /**
  * 测试xfermode各种绘制状态
@@ -30,6 +28,7 @@ import com.ldfs.demo.widget.XfermodesSampleView;
  * @Date 2015/3/3
  * 
  */
+@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.default_bete_info)
 public class FragmentXfermodes extends Fragment {
 	@ID(id = R.id.xv_view)
 	XfermodesSampleView mSampleView;

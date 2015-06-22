@@ -189,4 +189,47 @@
     <string name="scale">缩放</string>
     <string name="translation">位移</string>
     <string name="rotate">旋转</string>
+
+
+
+    <!--项目进度信息-->
+    <string name="demo_rate">项目进度:</string>
+    <string name="demo_rate_info">Demo进度信息:</string>
+    <string name="no_beteinfo">没有备注信息</string>
+    <string name="layout_translation_bete">完成动画结构控制,己发现问题:有时候失效.其他问题</string>
+    <string name="default_bete_info">简单测试项目,没有什么看点~</string>
+    <string name="view_translation_bete_info">这个效果只对应FixGridLayout这个控件,其他的控件并不能用.建议使用3.0之后系统推出的ViewTranslation这个组控制</string>
+    <string name="share_bete_info">该项目核心功能己开发完毕,只剩Button展示样式问题,还有代码优化,暂不会进行</string>
+    <string name="add_music_bete_info">项目放弃使用这个效果,所以也不会完善,但效果已经实现.可参考.</string>
+    <string name="click_wheel_bete_info">自定义效果,实际并没有使用,可以参考</string>
+    <string name="edit_text_bate_info">只是用来参考绘制,并没有使用.所以也没有完善</string>
+    <string name="divider_bete_info">在项目使用很多处,但存在一个系统的问题,就是绘左边线,上边线,与右下边线.存在宽度问题.待修正</string>
+    <string name="flat_bete_info">存在问题,绘制效率问题,绘制效果控制.己投入项目使用.</string>
+    <string name="frame_bete_info">如果使用加载圈,请不要使用WheelView,未解决ObjectAnimator一些自身存在问题</string>
+    <string name="indicator_bete_info">可正常使用,但代码未重构.且.存在更好效果,更多控制未实现.</string>
+    <string name="listindicator_bate_info">实现最基本效果.有空会完善为小米音乐的效果.</string>
+    <string name="musicprogressbar_bete_info">可参考效果,己完成.</string>
+    <string name="wave_bete_info">参考网上一些Demo实现最基本效果.只是能用.效果并不好.</string>
+    <string name="popup_bete_info">存在问题,只是实际最基本功能,考虑实现成PopupMenu效果.但项目未使用.所以未改善.</string>
+    <string name="thrntable_bete_info">实现最基本功能,需要改善地方很多.</string>
+    <string name="timer_bete_info">似乎没什么用,只是写写</string>
+    <string name="titlebar_bete_info">可正常使用,可自定义修改,别介绍demo写得丑</string>
+    <string name="turntable_wheel_bate_info">一个自实现效果.没有在项目中使用.纯属练手,可参考思路.挺难写.</string>
+    <string name="wheel_bate_info">为实现强大订制功能,使用了属性动画无限旋转.因此存在一个属性动画的bug.并不介绍接入项目使用.存在问题</string>
+    <string name="drawable_bate_info">试图做出类似5.0闹钟应用图标效果.但因为项目未使用.所以就没有完善了.可以参考</string>
+    <string name="delayload_bate_info">一个自实现的fragment延持加载数据效果,可使用.待重构完善.</string>
+    <string name="dismisslist_bete_info">网上摘抄效果,存在bug,推荐直接使用RecyclerView</string>
+    <string name="draw_bete_info">试图自实现的控件拖动排序.实现中.</string>
+    <string name="drawline_bate_info">一个测试绘图示例.可参考</string>
+    <string name="pager_indicator_bete_info">一个ViewPager指示器控件,存在bug,且需要重构与实现更复杂效果</string>
+    <string name="pager_edit_info">动态增删ViewPager Fragent条目示例</string>
+    <string name="webview_bate_info">效果己实现,但与动态切换listview状态,且自动滚动.有待实现.其他可正常使用</string>
+    <string name="guide_bate_info">应用引导遮罩层效果,正在完善其动态附加功能</string>
+    <string name="alibum_bete_info">正在完善</string>
+    <string name="radio_group_bate_info">单选组控件,其他效果有待实现.</string>
+    <string name="progress_bete_info">该demo己实现,但推荐更灵活的FrameView.</string>
+    <string name="subscribe_bate_info">项目存在问题,机率很低.但正常使用无问题.</string>
+    <string name="slider_bate_info">项目存在问题.可以参考</string>
+    <string name="preference_bate_info">有待完善</string>
+    <string name="bate_info_setting">显示Demo进度信息</string>
 </resources>

@@ -13,4 +13,8 @@
     <item name="view_handle" type="id"/>
     <item name="view_content" type="id"/>
 
+    <item name="tv_rate_state" type="id"/>
+    <item name="tv_rate_info" type="id"/>
+
+
 </resources>

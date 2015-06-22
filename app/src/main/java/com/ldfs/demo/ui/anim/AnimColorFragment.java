@@ -14,6 +14,8 @@ import com.ldfs.demo.R;
 import com.ldfs.demo.anim.AnimationUtils;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ImageUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -26,6 +28,7 @@ import com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener;
  * @author momo
  * @Date 2015/2/8
  */
+@RateInfo(rate= Rate.COMPLETE)
 public class AnimColorFragment extends Fragment {
 	@ID(id = R.id.view)
 	private View mView;

@@ -62,10 +62,10 @@ public class ViewTranslation {
 
 
 
-    public static void startAnim(View view, int mode, int anim, int gravity) {
+    public static void startAnim(View view, int mode, int anim, int gravity,boolean isStart) {
         if (null == view) return;
         TranslationValue translationValue = new TranslationValue(false, 300, gravity, mode, anim);
-        AnimatorSet animatorSet = getAnimatorSet(view, translationValue, true);
+        AnimatorSet animatorSet = getAnimatorSet(view, translationValue, isStart);
         if (null != animatorSet) {
             animatorSet.start();
         }

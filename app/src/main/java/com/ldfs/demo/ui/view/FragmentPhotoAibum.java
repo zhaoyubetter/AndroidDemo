@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import com.ldfs.demo.R;
 import com.ldfs.demo.adapter.PhotoAlbumAdapter;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.bean.PhotoItem;
 import com.ldfs.demo.util.AlbumUtils;
 import com.ldfs.demo.util.ViewInject;
@@ -25,6 +27,7 @@ import java.util.ArrayList;
  * @author cz
  * @date 2015/6/16
  */
+@RateInfo(rate= Rate.CODING,beteInfo = R.string.alibum_bete_info)
 public class FragmentPhotoAibum extends Fragment {
 
     @ID(id = R.id.titlebar_container)

@@ -1,8 +1,5 @@
 package com.ldfs.demo.ui;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,7 +16,13 @@ import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.bean.MyItem;
 import com.ldfs.demo.db.DbHelper;
 import com.ldfs.demo.db.DbTable;
+import com.ldfs.demo.preference.ConfigName;
+import com.ldfs.demo.preference.PrefernceUtils;
 import com.ldfs.demo.util.ViewInject;
+import com.ldfs.demo.widget.SwitchView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation
@@ -32,6 +35,8 @@ public class NavigationDrawerFragment extends Fragment {
 	@ID(id = R.id.lv_menu_list)
 	private ListView mDrawerListView;
 	private List<MyItem> mItems;
+	@ID(id=R.id.sv_switch)
+	private SwitchView mSwitchView;
 	private NavigationDrawerCallbacks mCallbacks;
 
 	public NavigationDrawerFragment() {
@@ -62,6 +67,13 @@ public class NavigationDrawerFragment extends Fragment {
 				}
 			});
 		}
+		mSwitchView.setChecked(!PrefernceUtils.getBoolean(ConfigName.BATE_INFO));
+		mSwitchView.setOnCheckedChangeListener(new SwitchView.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(SwitchView switchView, boolean isChecked) {
+				PrefernceUtils.setBoolean(ConfigName.BATE_INFO,isChecked);
+			}
+		});
 
 	}
 

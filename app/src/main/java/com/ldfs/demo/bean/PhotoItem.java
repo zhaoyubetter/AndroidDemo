@@ -19,7 +19,6 @@ public class PhotoItem implements Parcelable {
     public int count;//当前目录下子条目数量
 
 
-
     public PhotoItem(int id, int width, int height, long size, String path, String name, String title) {
         this.id = id;
         this.width = width;

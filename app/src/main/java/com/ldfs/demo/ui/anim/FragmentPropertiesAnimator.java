@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.Loger;
 import com.ldfs.demo.util.ViewInject;
 import com.nineoldandroids.animation.Animator;
@@ -23,6 +25,7 @@ import com.nineoldandroids.view.ViewPropertyAnimator;
 /**
  * 属性动画演示
  */
+@RateInfo(rate= Rate.CREATE,beteInfo = R.string.default_bete_info)
 public class FragmentPropertiesAnimator extends Fragment {
     @ID(id = R.id.view)
     private View mView;

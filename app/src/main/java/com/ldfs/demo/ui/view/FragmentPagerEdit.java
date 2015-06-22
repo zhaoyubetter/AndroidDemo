@@ -1,6 +1,5 @@
 package com.ldfs.demo.ui.view;
 
-import static com.ldfs.demo.listener.OperatListener.INIT_DATA;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -13,8 +12,12 @@ import com.ldfs.demo.R;
 import com.ldfs.demo.adapter.SimpleFragmenStatePagerAdapter;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.PagerStrip;
+
+import static com.ldfs.demo.listener.OperatListener.INIT_DATA;
 
 /**
  * FragmentPagerAdapter条目动态编辑
@@ -23,6 +26,7 @@ import com.ldfs.demo.widget.PagerStrip;
  * @Date 2015/2/11
  * 
  */
+@RateInfo(rate= Rate.COMPLETE,beteInfo = R.string.pager_edit_info)
 public class FragmentPagerEdit extends Fragment implements OnPageChangeListener {
 	@ID(id = R.id.vp_pager)
 	private ViewPager pager = null;

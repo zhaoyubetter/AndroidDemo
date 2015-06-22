@@ -8,8 +8,8 @@
     android:clickable="true">
 
     <com.ldfs.demo.widget.SwitchView
-        android:layout_width="50dp"
-        android:layout_height="28dp"
+        android:layout_width="60dp"
+        android:layout_height="34dp"
         android:layout_margin="10dp"
         android:layout_gravity="center_horizontal" />
 

@@ -11,10 +11,13 @@ import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.adapter.SimpleFragmentPagerAdapter;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.ui.ListTestFragment;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.PagerStrip;
 
+@RateInfo(rate = Rate.COMPLETE_BATE,beteInfo = R.string.slider_bate_info)
 public class FragmentPagerSlider extends Fragment {
 	@ID(id = R.id.pager_slider)
 	private PagerStrip mPagerStrip;

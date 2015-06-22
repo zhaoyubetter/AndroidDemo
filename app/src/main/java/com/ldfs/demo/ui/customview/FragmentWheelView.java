@@ -1,7 +1,5 @@
 package com.ldfs.demo.ui.customview;
 
-import java.util.ArrayList;
-
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -16,12 +14,16 @@ import android.widget.TextView;
 import com.ldfs.demo.App;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.RadioGridLayout;
 import com.ldfs.demo.widget.RadioGridLayout.OnCheckListener;
 import com.ldfs.demo.widget.WheelView;
+
+import java.util.ArrayList;
 
 /**
  * 自定义Wheel旋转
@@ -30,6 +32,7 @@ import com.ldfs.demo.widget.WheelView;
  * @Date 2015/3/4
  * 
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.wheel_bate_info)
 public class FragmentWheelView extends Fragment implements OnSeekBarChangeListener, OnCheckListener {
 	@ID(id = R.id.wv_wheel)
 	private WheelView mWheelView;

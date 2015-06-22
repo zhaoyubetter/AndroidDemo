@@ -17,6 +17,8 @@ import com.ldfs.demo.R;
 import com.ldfs.demo.anim.AnimValue;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.FixedGridLayout;
@@ -34,6 +36,7 @@ import java.util.Random;
  * @author momo
  * @Date 2015/2/12
  */
+@RateInfo(rate= Rate.COMPLETE)
 public class FragmentFixedGridLayout extends Fragment {
     @ID(id = R.id.fl_grid_layout)
     private FixedGridLayout mGridLayout;

@@ -1,7 +1,5 @@
 package com.ldfs.demo.ui.anim;
 
-import java.util.Random;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,10 +14,13 @@ import android.widget.TextView;
 import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.MethodClick;
-import com.ldfs.demo.util.Loger;
+import com.ldfs.demo.annotation.item.Rate;
+import com.ldfs.demo.annotation.item.RateInfo;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.FixedGridLayout;
+
+import java.util.Random;
 
 /**
  * 自定义简单的LayoutTransition测试
@@ -28,6 +29,7 @@ import com.ldfs.demo.widget.FixedGridLayout;
  * @Date 2015/2/13
  * 
  */
+@RateInfo(rate= Rate.COMPLETE_BATE,beteInfo = R.string.view_translation_bete_info)
 public class FragmentLayoutTransition extends Fragment {
 	@ID(id = R.id.fl_grid_layout)
 	private FixedGridLayout mGridLayout;
