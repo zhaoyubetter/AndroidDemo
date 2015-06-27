@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.facebook.stetho.Stetho;
 import com.ldfs.demo.preference.PrefernceUtils;
+import com.ldfs.demo.util.Loger;
 import com.ldfs.demo.util.PackageUtil;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -114,6 +115,7 @@ public class App extends Application implements Thread.UncaughtExceptionHandler 
 	public void uncaughtException(Thread thread, Throwable exception) {
 		final StringWriter stackTrace = new StringWriter();
 		exception.printStackTrace(new PrintWriter(stackTrace));
+		Loger.e(this,stackTrace.toString());
 		for (Activity activity : activitys) {
 			activity.finish();
 		}

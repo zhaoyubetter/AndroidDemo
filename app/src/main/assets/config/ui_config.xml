@@ -72,6 +72,7 @@
         <item name="自定义ScrollView" info="自定义ScrollView 解决WebView 与其他控件并存.WebView Event事件丢失" clazz="com.ldfs.demo.ui.view.FragmentWebView" />
         <item name="自定义ScrollView" info="自定义ScrollView,研究scroll原理" clazz="com.ldfs.demo.ui.view.FragmentScrollView" />
         <item name="自定义图图库" info="自定义图库多选" clazz="com.ldfs.demo.ui.view.FragmentPhotoAibum" />
+        <item name="绘图测试" info="自定义绘图形状动画" clazz="com.ldfs.demo.ui.view.FragmentShapeAnim" />
     </type>
 
     <type name="注入控制" id="4">
