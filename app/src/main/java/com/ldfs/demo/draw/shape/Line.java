@@ -1,7 +1,9 @@
-package com.ldfs.demo.draw;
+package com.ldfs.demo.draw.shape;
 
 import android.graphics.Canvas;
 import android.graphics.PointF;
+
+import com.ldfs.demo.draw.ShapeConfig;
 
 /**
  * Created by cz on 15/6/23.

@@ -7,9 +7,11 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.widget.TextView;
 
 import com.ldfs.demo.R;
+import com.ldfs.demo.util.Loger;
 
 
 /**
@@ -19,6 +21,7 @@ import com.ldfs.demo.R;
  * @Date 2014/6/3
  */
 public class CenterTextView extends TextView {
+    private static final int NONE = 0;
     private static final int LEFT = 1;
     private static final int TOP = 2;
     private static final int RIGHT = 3;
@@ -54,6 +57,7 @@ public class CenterTextView extends TextView {
     protected void onDraw(Canvas canvas) {
         setCanvasTranslate(canvas);
         super.onDraw(canvas);
+        canvas.restore();
     }
 
     /**
@@ -62,8 +66,9 @@ public class CenterTextView extends TextView {
      * @param canvas
      */
     private void setCanvasTranslate(Canvas canvas) {
+        if (NONE == mGravity) return;
         Drawable[] drawables = getCompoundDrawables();
-        Drawable drawable = drawables[mGravity];
+        Drawable drawable = drawables[mGravity - 1];
         if (null != drawable) {
             Rect outRect = new Rect();
             CharSequence text = getText();
@@ -76,33 +81,39 @@ public class CenterTextView extends TextView {
             int intrinsicHeight = drawable.getIntrinsicHeight();
             switch (mGravity) {
                 case LEFT:
-                    translation(canvas, textWidth, getPaddingLeft(), intrinsicWidth);
+                    translation(canvas, textWidth, getPaddingLeft(), intrinsicWidth, getCompoundDrawablePadding());
                     break;
                 case TOP:
-                    translation(canvas, textHeight, getPaddingTop(), intrinsicHeight);
+                    translation(canvas, textHeight, getPaddingTop(), intrinsicHeight, getCompoundDrawablePadding());
                     break;
                 case RIGHT:
-                    translation(canvas, textWidth, getPaddingRight(), intrinsicWidth);
+                    translation(canvas, textWidth, getPaddingRight(), intrinsicWidth, 0);
                     break;
                 case BOTTOM:
-                    translation(canvas, textHeight, getPaddingBottom(), intrinsicHeight);
+                    translation(canvas, textHeight, getPaddingBottom(), intrinsicHeight, 0);
                     break;
             }
+
         }
     }
 
 
-    private void translation(Canvas canvas, int textSize, int padding, int drawableSize) {
+    private void translation(Canvas canvas, int textSize, int padding, int drawableSize, int drawablePadding) {
         int width = getWidth();
         int height = getHeight();
         int translationX = 0, translationY = 0;
         if (LEFT == mGravity || RIGHT == mGravity) {
             //横向
-            translationX = width - textSize - padding - drawableSize - getCompoundDrawablePadding() >> 1;
+            setGravity(Gravity.CENTER_VERTICAL);
+            translationX = 0;
+//            translationX = (width - textSize - drawableSize - drawablePadding) / 2;
         } else {
             //纵向
-            translationY = height - textSize - padding - drawableSize - getCompoundDrawablePadding() >> 1;
+            setGravity(Gravity.CENTER_HORIZONTAL);
+            translationY = 0;
+//            translationY = (height - textSize - padding - drawableSize - drawablePadding);
         }
         canvas.translate(translationX, translationY);
+        Loger.i(this, "width:" + width + " height:" + height + " textWidth:" + textSize + " padding:" + padding + " drawableSize:" + drawableSize + " drawablePadding:" + drawablePadding + " translationX:" + translationX + " translationY:" + translationY);
     }
 }

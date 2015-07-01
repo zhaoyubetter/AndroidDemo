@@ -4,11 +4,17 @@ import android.graphics.Canvas;
 import android.graphics.PointF;
 import android.view.View;
 
+import com.ldfs.demo.draw.shape.Arc;
+import com.ldfs.demo.draw.shape.Circle;
+import com.ldfs.demo.draw.shape.Line;
+import com.ldfs.demo.draw.shape.Ranctangle;
+import com.ldfs.demo.draw.shape.Shape;
+import com.ldfs.demo.draw.shape.Text;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ValueAnimator;
 
-import java.lang.ref.WeakReference;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -25,14 +31,14 @@ public class ShapeSet {
         mCacheViewSet = new WeakHashMap<>();
     }
 
-    private final WeakHashMap<Float, WeakReference<Shape>> mShapes;
+    private final HashMap<Float, Shape> mShapes;
     private AnimatorSet mAnimatorSet;
     private Animator mLastAnimator;
     private boolean isStart;
 
     public ShapeSet() {
         mAnimatorSet = new AnimatorSet();
-        mShapes = new WeakHashMap<>();
+        mShapes = new HashMap<>();
     }
 
     /**
@@ -80,13 +86,10 @@ public class ShapeSet {
      * @param targetY 绘制结束终点 y位置
      */
     private ShapeSet line(float x, float y, float stopX, float stopY, float targetX, float targetY, ShapeConfig config, boolean isAfter) {
-        PointF stopPoint = new PointF(stopX, stopY);
-        float id = x * y * stopPoint.hashCode();
-        WeakReference<com.ldfs.demo.draw.Shape> shapeWeakReference = mShapes.get(id);
-        if (null == shapeWeakReference || null == shapeWeakReference.get()) {
-            mShapes.put(id, new WeakReference<Shape>(new Line(x, y, stopX, stopY, targetX, targetY, config)));
-            //初始化绘制控制
-            createAnimator(id,config, isAfter);
+        float id = x * y * new PointF(targetX, targetY).hashCode()+config.hashCode();
+        Shape cacheShape = mShapes.get(id);
+        if (null == cacheShape) {
+            cacheShape(id, new Line(x, y, stopX, stopY, targetX, targetY, config), isAfter);
         }
         return this;
     }
@@ -99,13 +102,15 @@ public class ShapeSet {
     private void createAnimator(final float id, ShapeConfig config, boolean isAfter) {
         ValueAnimator valueAnimator = ValueAnimator.ofFloat(1f);
         valueAnimator.setDuration(config.mDuration);
+        valueAnimator.setRepeatCount(config.mRepeatCount);
+        valueAnimator.setRepeatMode(config.mRepeatMode);
+        valueAnimator.setStartDelay(config.mDelayDuration);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                WeakReference<Shape> shapeReference = mShapes.get(id);
-                if (null != shapeReference && null != shapeReference.get()) {
-                    Shape shape = shapeReference.get();
-                    shape.mFraction = valueAnimator.getAnimatedFraction();
+                Shape cacheShape = mShapes.get(id);
+                if (null != cacheShape) {
+                    cacheShape.mFraction = valueAnimator.getAnimatedFraction();
                     View target = mCacheViewSet.get(ShapeSet.this);
                     if (null != target) {
                         target.invalidate();
@@ -113,13 +118,14 @@ public class ShapeSet {
                 }
             }
         });
-        if (null == mLastAnimator) {
-            mLastAnimator = valueAnimator;
-        } else if (isAfter) {
-            mAnimatorSet.play(valueAnimator).after(mLastAnimator);
-        } else {
-            mAnimatorSet.play(valueAnimator).with(mLastAnimator);
+        if (null != mLastAnimator) {
+            if (isAfter) {
+                mAnimatorSet.play(valueAnimator).after(mLastAnimator);
+            } else {
+                mAnimatorSet.play(valueAnimator).with(mLastAnimator);
+            }
         }
+        mLastAnimator = valueAnimator;
     }
 
     /**
@@ -180,12 +186,10 @@ public class ShapeSet {
      * @param targetRadius 绘制目标半径位置
      */
     private ShapeSet circle(float x, float y, float radius, float targetRadius, ShapeConfig config, boolean isAfter) {
-        float id = x * y * targetRadius;
-        WeakReference<Shape> shapeWeakReference = mShapes.get(id);
-        if (null == shapeWeakReference || null == shapeWeakReference.get()) {
-            mShapes.put(id, new WeakReference<Shape>(new Circle(x, y, radius, targetRadius, config)));
-            //初始化绘制控制
-            createAnimator(id,config, isAfter);
+        float id = x * y * targetRadius * config.hashCode();
+        Shape cacheShape = mShapes.get(id);
+        if (null == cacheShape) {
+            cacheShape(id, new Circle(x, y, radius, targetRadius, config), isAfter);
         }
         return this;
     }
@@ -258,12 +262,10 @@ public class ShapeSet {
      * @param useCenter   是否使用中心
      */
     private ShapeSet arc(float x, float y, float stopX, float stopY, int startAngle, int sweepAngle, int targetAngle, boolean useCenter, ShapeConfig config, boolean isAfter) {
-        float id = x * y * targetAngle;
-        WeakReference<Shape> shapeWeakReference = mShapes.get(id);
-        if (null == shapeWeakReference || null == shapeWeakReference.get()) {
-            mShapes.put(id, new WeakReference<Shape>(new Arc(x, y, stopX, stopY, startAngle, sweepAngle, targetAngle, useCenter, config)));
-            //初始化绘制控制
-            createAnimator(id,config, isAfter);
+        float id = x * y * targetAngle+config.hashCode();
+        Shape cacheShape = mShapes.get(id);
+        if (null == cacheShape) {
+            cacheShape(id, new Arc(x, y, stopX, stopY, startAngle, sweepAngle, targetAngle, useCenter, config), isAfter);
         }
         return this;
     }
@@ -308,7 +310,7 @@ public class ShapeSet {
      * @param targetY 绘制目标点 y位置
      */
     public ShapeSet ranctangle(float x, float y, float targetX, float targetY, ShapeConfig config) {
-        return ranctangle(x, y, 0, 0, targetX, targetY, config, false);
+        return ranctangle(x, y, x, y, targetX, targetY, config, false);
     }
 
     /**
@@ -336,13 +338,10 @@ public class ShapeSet {
      * @param targetY 绘制目标点 y位置
      */
     private ShapeSet ranctangle(float x, float y, float stopX, float stopY, float targetX, float targetY, ShapeConfig config, boolean isAfter) {
-        PointF pointF = new PointF(targetX, targetY);
-        float id = x * y * pointF.hashCode();
-        WeakReference<Shape> shapeWeakReference = mShapes.get(id);
-        if (null == shapeWeakReference || null == shapeWeakReference.get()) {
-            mShapes.put(id, new WeakReference<Shape>(new Ranctangle(x, y, stopX, stopY, targetX, targetY, config)));
-            //初始化绘制控制
-            createAnimator(id,config, isAfter);
+        float id = x * y * new PointF(x, y).hashCode()+config.hashCode();
+        Shape cacheShape = mShapes.get(id);
+        if (null == cacheShape) {
+            cacheShape(id, new Ranctangle(x, y, stopX, stopY, targetX, targetY, config), isAfter);
         }
         return this;
     }
@@ -375,6 +374,104 @@ public class ShapeSet {
         return ranctangle(x, y, stopX, stopY, targetX, targetY, config, true);
     }
 
+
+    /**
+     * 绘制文字体
+     *
+     * @param text       绘制文件
+     * @param x          绘制起点 x位置
+     * @param y          绘制起点 y位置
+     * @param textSize   绘制文字大小
+     * @param targetSize 绘制文字最终大小
+     * @param config     图片配置对象
+     * @param isAfter    是否延持执行
+     * @return
+     */
+    private ShapeSet text(String text, float x, float y, float textSize, float targetSize, ShapeConfig config, boolean isAfter) {
+        float id = x * y * targetSize+config.hashCode();
+        Shape cacheShape = mShapes.get(id);
+        if (null == cacheShape) {
+            cacheShape(id, new Text(text, x, y, textSize, targetSize, config), isAfter);
+        }
+        return this;
+    }
+
+
+    /**
+     * 绘制文字体
+     *
+     * @param text       绘制文件
+     * @param x          绘制起点 x位置
+     * @param y          绘制起点 y位置
+     * @param textSize   绘制文字大小
+     * @param targetSize 绘制文字最终大小
+     * @param config     图片配置对象
+     * @return
+     */
+    public ShapeSet text(String text, float x, float y, float textSize, float targetSize, ShapeConfig config) {
+        return text(text, x, y, textSize, targetSize, config, false);
+    }
+
+
+    /**
+     * 绘制文字体
+     *
+     * @param text       绘制文件
+     * @param x          绘制起点 x位置
+     * @param y          绘制起点 y位置
+     * @param targetSize 绘制文字最终大小
+     * @param config     图片配置对象
+     * @return
+     */
+    public ShapeSet text(String text, float x, float y, float targetSize, ShapeConfig config) {
+        return text(text, x, y, targetSize, targetSize, config, false);
+    }
+
+
+    /**
+     * 延持绘制文字体
+     *
+     * @param text       绘制文件
+     * @param x          绘制起点 x位置
+     * @param y          绘制起点 y位置
+     * @param textSize   绘制文字大小
+     * @param targetSize 绘制文字最终大小
+     * @param config     图片配置对象
+     * @return
+     */
+    public ShapeSet afterText(String text, float x, float y, float textSize, float targetSize, ShapeConfig config) {
+        return text(text, x, y, textSize, targetSize, config, true);
+    }
+
+
+    /**
+     * 延持绘制文字体
+     *
+     * @param text       绘制文件
+     * @param x          绘制起点 x位置
+     * @param y          绘制起点 y位置
+     * @param targetSize 绘制文字最终大小
+     * @param config     图片配置对象
+     * @return
+     */
+    public ShapeSet afterText(String text, float x, float y, float targetSize, ShapeConfig config) {
+        return text(text, x, y, targetSize, targetSize, config, true);
+    }
+
+    /**
+     * 绘存shape对象
+     *
+     * @param id      shape对象的绘存标记id
+     * @param shape   shape对象
+     * @param isAfter 是否延持执行
+     */
+    private void cacheShape(float id, Shape shape, boolean isAfter) {
+        mShapes.put(id, shape);
+        //初始化绘制控制
+        createAnimator(id, shape.mConfig, isAfter);
+    }
+
+
     /**
      * 开始绘制图形
      *
@@ -385,10 +482,10 @@ public class ShapeSet {
             isStart = true;
             mAnimatorSet.start();
         }
-        for (Map.Entry<Float, WeakReference<Shape>> entry : mShapes.entrySet()) {
-            WeakReference<Shape> value = entry.getValue();
-            if (null != value && null != value.get()) {
-                value.get().draw(canvas);
+        for (Map.Entry<Float, Shape> entry : mShapes.entrySet()) {
+            Shape value = entry.getValue();
+            if (null != value) {
+                value.draw(canvas);
             }
         }
 

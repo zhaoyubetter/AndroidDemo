@@ -1,8 +1,10 @@
-package com.ldfs.demo.draw;
+package com.ldfs.demo.draw.shape;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PointF;
+
+import com.ldfs.demo.draw.ShapeConfig;
 
 /**
  * Created by cz on 15/6/23.
@@ -34,8 +36,8 @@ public abstract class Shape<V> {
     public void draw(Canvas canvas) {
         this.mPaint.setStrokeWidth(mConfig.mStrokeWidth);
         this.mPaint.setStyle(mConfig.mStyle);
-        this.mPaint.setAlpha(mConfig.mColor);
         this.mPaint.setColor(evaluate(mFraction, mConfig.mColor, mConfig.mTargetColor));
+        this.mPaint.setAlpha((int) (mConfig.mAlpha + (mConfig.mTargetAlpha - mConfig.mAlpha) * mFraction));
     }
 
     /**

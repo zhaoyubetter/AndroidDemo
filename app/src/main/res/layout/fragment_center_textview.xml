@@ -3,17 +3,20 @@
     xmlns:auto="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/app_bg">
+    android:background="@color/app_bg"
+    android:clickable="true"
+    android:orientation="vertical">
 
     <com.ldfs.demo.widget.CenterTextView
         android:id="@+id/cv_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/ic_launcher"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_gravity="center_horizontal"
+        android:background="@color/dark_gray"
+        android:drawableLeft="@drawable/ic_launcher"
         android:text="@string/test"
+        android:padding="50dp"
+        android:drawablePadding="20dp"
         android:textSize="20dp" />
 
 
@@ -22,7 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        auto:rl_mode="single_choose"/>
+        auto:rl_mode="single_choose"
+        auto:rl_check_res="@drawable/checked1"/>
 
     <TextView
         android:id="@+id/tv_padding"
