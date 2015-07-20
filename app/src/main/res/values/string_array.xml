@@ -143,4 +143,28 @@
         <item>右</item>
         <item>下</item>
     </string-array>
+
+    <string-array name="calendar_mode">
+        <item>月</item>
+        <item>周</item>
+    </string-array>
+
+    <string-array name="calendar_sort_mode">
+        <item>东方</item>
+        <item>西方</item>
+    </string-array>
+
+    <string-array name="calendar_change_data">
+        <item>前一个月</item>
+        <item>后一个月</item>
+    </string-array>
+
+    <string-array name="click_mode">
+        <item>无</item>
+        <item>点击</item>
+        <item>标记</item>
+        <item>单选</item>
+        <item>多选</item>
+        <item>选取</item>
+    </string-array>
 </resources>

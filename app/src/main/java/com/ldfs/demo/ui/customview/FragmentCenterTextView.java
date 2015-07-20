@@ -1,5 +1,7 @@
 package com.ldfs.demo.ui.customview;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import com.ldfs.demo.R;
 import com.ldfs.demo.annotation.ID;
 import com.ldfs.demo.annotation.item.Rate;
 import com.ldfs.demo.annotation.item.RateInfo;
+import com.ldfs.demo.util.TextFontUtils;
 import com.ldfs.demo.util.UnitUtils;
 import com.ldfs.demo.util.ViewInject;
 import com.ldfs.demo.widget.CenterTextView;
@@ -23,7 +26,7 @@ import java.util.ArrayList;
 /**
  * textview drawable与文字居中
  */
-@RateInfo(rate= Rate.CODING)
+@RateInfo(rate = Rate.CODING)
 public class FragmentCenterTextView extends Fragment {
     @ID(id = R.id.cv_text_view)
     private CenterTextView mTextView;
@@ -51,18 +54,19 @@ public class FragmentCenterTextView extends Fragment {
         mRadioLayout.setCheckedListener(new RadioGridLayout.OnCheckListener() {
             @Override
             public void checked(View v, int newPosition, int oldPosition) {
+                mGravity = newPosition;
                 switch (newPosition) {
                     case 1:
-                        mTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_launcher, 0, 0, 0);
+                        mTextView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.red_rectangle, 0, 0, 0);
                         break;
                     case 2:
-                        mTextView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_launcher, 0, 0);
+                        mTextView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.red_rectangle, 0, 0);
                         break;
                     case 3:
-                        mTextView.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.ic_launcher, 0);
+                        mTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.red_rectangle, 0);
                         break;
                     case 4:
-                        mTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.ic_launcher);
+                        mTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, R.drawable.red_rectangle);
                         break;
                 }
                 mTextView.setCenterGravity(newPosition);
@@ -76,24 +80,24 @@ public class FragmentCenterTextView extends Fragment {
         mSeekPadding.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                int padding = UnitUtils.dip2px(getActivity(), progress/2);
-//                mPadding.setText(App.getStr(R.string.padding_value, progress));
-//                TextFontUtils.setWordColorAndTypedFace(mPadding, Color.RED, Typeface.BOLD, padding);
-//                switch (mGravity) {
-//                    case 1:
-//                        mTextView.setPadding(padding,0,0,0);
-//                        break;
-//                    case 2:
-//                        mTextView.setPadding(0,padding,0,0);
-//                        break;
-//                    case 3:
-//                        mTextView.setPadding(0,0,padding,0);
-//                        break;
-//                    case 4:
-//                        mTextView.setPadding(0,0,0,padding);
-//                        break;
-//                }
-                mTextView.setCompoundDrawablePadding(padding);
+                int padding = UnitUtils.dip2px(getActivity(), progress);
+                mPadding.setText(App.getStr(R.string.padding_value, progress));
+                TextFontUtils.setWordColorAndTypedFace(mPadding, Color.RED, Typeface.BOLD, padding);
+                switch (mGravity) {
+                    case 1:
+                        mTextView.setPadding(padding, 0, 0, 0);
+                        break;
+                    case 2:
+                        mTextView.setPadding(0, padding, 0, 0);
+                        break;
+                    case 3:
+                        mTextView.setPadding(0, 0, padding, 0);
+                        break;
+                    case 4:
+                        mTextView.setPadding(0, 0, 0, padding);
+                        break;
+                }
+//                mTextView.setCompoundDrawablePadding(padding);
             }
 
             @Override

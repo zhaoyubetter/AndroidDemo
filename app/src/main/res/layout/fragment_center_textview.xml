@@ -13,10 +13,9 @@
         android:layout_height="160dp"
         android:layout_gravity="center_horizontal"
         android:background="@color/dark_gray"
-        android:drawableLeft="@drawable/ic_launcher"
+        android:drawableLeft="@drawable/red_rectangle"
         android:text="@string/test"
-        android:padding="50dp"
-        android:drawablePadding="20dp"
+        android:gravity="center_vertical"
         android:textSize="20dp" />
 
 

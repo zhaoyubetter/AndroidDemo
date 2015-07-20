@@ -232,4 +232,10 @@
     <string name="slider_bate_info">项目存在问题.可以参考</string>
     <string name="preference_bate_info">有待完善</string>
     <string name="bate_info_setting">显示Demo进度信息</string>
+    <string name="calendar_test">日历控件演示:</string>
+    <string name="last_month">前一个月</string>
+    <string name="next_month">后一个月</string>
+    <string name="calendar_mode">日历展示模式</string>
+    <string name="data_change">更换日期</string>
+    <string name="sort_mode">排序模式</string>
 </resources>

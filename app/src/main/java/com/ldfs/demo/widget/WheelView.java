@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.ldfs.demo.R;
+import com.ldfs.demo.util.Loger;
 import com.ldfs.demo.util.UnitUtils;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorListenerAdapter;
@@ -106,11 +107,13 @@ public class WheelView extends View {
      * @param mode
      */
     public void setWheelMode(int mode) {
+        Loger.i("mode:"+mode);
         this.mWheelMode = mode;
         if (AUTO_PROGRESS == mode) {
             setAutoProgress(new AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
+                    Loger.i("update");
                     setProgress(Integer.valueOf(animation.getAnimatedValue().toString()));
                 }
             });
@@ -134,9 +137,34 @@ public class WheelView extends View {
                 }
             });
         } else if (null != mProgressAnimator) {
+            Loger.i("cancel");
+            mProgressAnimator.removeAllUpdateListeners();
             mProgressAnimator.cancel();
             invalidate();
         }
+    }
+
+    private void setAutoProgress(AnimatorUpdateListener listener) {
+        if (null != mProgressAnimator) {
+            Loger.i("progress_cancel");
+            mProgressAnimator.removeAllUpdateListeners();
+            mProgressAnimator.cancel();
+        }
+        mProgressAnimator = ObjectAnimator.ofInt(360);
+        mProgressAnimator.setDuration(3 * 1000);
+        mProgressAnimator.setRepeatMode(ValueAnimator.RESTART);
+        mProgressAnimator.setRepeatCount(-1);
+        // 设置插入器
+        mProgressAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+        mProgressAnimator.addUpdateListener(listener);
+        mProgressAnimator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                mRotateAngle = 0;
+                mCurrentDegress = 0;
+            }
+        });
+        mProgressAnimator.start();
     }
 
     /**
@@ -261,27 +289,6 @@ public class WheelView extends View {
     public void setInnerContourDrawMode(int mode) {
         this.mContourDrawMode = mode;
         invalidate();
-    }
-
-    private void setAutoProgress(AnimatorUpdateListener listener) {
-        if (null != mProgressAnimator) {
-            mProgressAnimator.cancel();
-        }
-        mProgressAnimator = ObjectAnimator.ofInt(360);
-        mProgressAnimator.setDuration(3 * 1000);
-        mProgressAnimator.setRepeatMode(ValueAnimator.RESTART);
-        mProgressAnimator.setRepeatCount(-1);
-        // 设置插入器
-        mProgressAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
-        mProgressAnimator.addUpdateListener(listener);
-        mProgressAnimator.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                mRotateAngle = 0;
-                mCurrentDegress = 0;
-            }
-        });
-        mProgressAnimator.start();
     }
 
     @Override

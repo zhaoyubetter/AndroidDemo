@@ -51,6 +51,7 @@
         <item name="添加效果" info="添加音乐效果" clazz="com.ldfs.demo.ui.customview.FragmentAddMusic" />
         <item name="CenterTextView" info="translation Canvas实现的textView与drawable居中" clazz="com.ldfs.demo.ui.customview.FragmentCenterTextView" />
         <item name="IndicateView" info="一个列表指示器控件" clazz="com.ldfs.demo.ui.customview.FragmentIndicatorView" />
+        <item name="CalendarView" info="一个简单日历控件" clazz="com.ldfs.demo.ui.customview.FragmentCalendarView" />
     </type>
 
     <type name="视图Demo" id="3">

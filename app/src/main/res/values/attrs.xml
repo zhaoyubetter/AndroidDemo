@@ -417,11 +417,14 @@
 
 
     <declare-styleable name="App_Theme">
-        <attr name="_src" format="reference" />  <!--imageview-->
+        <attr name="_src" format="reference" />
+        <!--imageview-->
         <attr name="src_filter" format="color" />
-        <attr name="_background" format="color|reference" /> <!--all-->
+        <attr name="_background" format="color|reference" />
+        <!--all-->
         <attr name="divide_color" format="color" />
-        <attr name="_text_color" format="color|reference" /> <!--textview-->
+        <attr name="_text_color" format="color|reference" />
+        <!--textview-->
         <attr name="_drawableTop" format="reference" />
         <attr name="_drawableLeft" format="reference" />
         <attr name="_drawableRight" format="reference" />
@@ -434,10 +437,10 @@
 
     <declare-styleable name="CenterTextView">
         <attr name="cv_gravity" format="enum">
-            <enum name="left" value="0x01"/>
-            <enum name="top" value="0x02"/>
-            <enum name="right" value="0x03"/>
-            <enum name="bottom" value="0x04"/>
+            <enum name="left" value="0x01" />
+            <enum name="top" value="0x02" />
+            <enum name="right" value="0x03" />
+            <enum name="bottom" value="0x04" />
         </attr>
     </declare-styleable>
 
@@ -449,6 +452,50 @@
         <attr name="iv_divider_size" format="dimension" />
         <attr name="iv_indicate_color" format="color" />
         <attr name="iv_indicate_size" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CalendarView">
+        <attr name="cd_title_text_size" format="dimension" />
+        <attr name="cd_title_text_color" format="color" />
+        <attr name="cd_day_text_size" format="dimension" />
+        <attr name="cd_day_text_color" format="color" />
+        <attr name="cd_unday_text_size" format="dimension" />
+        <attr name="cd_unday_text_color" format="color" />
+        <attr name="cd_day_select_color" format="color" />
+        <attr name="cd_day_mark_size" format="dimension" />
+        <attr name="cd_day_mark_color" format="color" />
+
+        <attr name="cd_title_height" format="dimension" />
+        <attr name="cd_day_padding" format="dimension" />
+
+        <attr name="cd_divide_size" format="dimension" />
+        <attr name="cd_divide_color" format="color" />
+
+        <attr name="cd_show_header" format="boolean" />
+
+        <attr name="cd_mode" format="enum">
+            <enum name="month" value="0x00" />
+            <enum name="day" value="0x01" />
+        </attr>
+        <attr name="cd_day_sort" format="enum">
+            <enum name="east" value="0x00" />
+            <enum name="west" value="0x01" />
+        </attr>
+        <attr name="cd_select_day_padding" format="dimension" />
+        <attr name="cd_day_mode" format="enum">
+            <enum name="none" value="0x00" />
+            <enum name="circle" value="0x01" />
+            <enum name="rectangle" value="0x02" />
+        </attr>
+
+        <attr name="cd_click_mode" format="enum">
+            <enum name="none" value="0x00"/>
+            <enum name="click" value="0x01"/>
+            <enum name="mask" value="0x02"/>
+            <enum name="single_choice" value="0x03"/>
+            <enum name="multiple_choice" value="0x04"/>
+            <enum name="rectangle_choice" value="0x05"/>
+        </attr>
     </declare-styleable>
 
 </resources>
